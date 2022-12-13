@@ -53,7 +53,6 @@ promptList = [ ("m", manPrompt)
              , ("x", xmonadPrompt)       
              ]
 
--- Custom prompts
 promptList' :: [(String, XPConfig -> String -> X (), String)]
 promptList' = [ ("c", calcPrompt, "qalc")         -- requires qalculate-gtk
               ]
@@ -62,29 +61,25 @@ promptList' = [ ("c", calcPrompt, "qalc")         -- requires qalculate-gtk
 
 myKeys :: [(String, X ())]
 myKeys =
-        -- Temporary
+        -- temp
         [ ("M-C-[", spawn "nitrogen --random --set-zoom-fill --head=0 &")
         , ("M-C-]", spawn "nitrogen --random --set-zoom-fill --head=1 &")
         , ("M-C-m", swallowToggle ) 
 
-        -- Xmonad
-        , ("M-C-r", spawn "xmonad --recompile")      -- Recompiles xmonad
-        , ("M-S-r", spawn "xmonad --restart")        -- Restarts xmonad
-        , ("M-S-q q", io exitSuccess)                  -- Quits xmonad
-        , ("M-S-q r", spawn "/sbin/reboot")                  
-        , ("M-S-q s", spawn "/sbin/shutdown")                  
+        , ("M-C-r", spawn "xmonad --recompile")      
+        , ("M-S-r", spawn "xmonad --restart")        
+        , ("M-S-q q", io exitSuccess)                
+        , ("M-S-q r", spawn "reboot")                  
+        , ("M-S-q s", spawn "poweroff")                  
 
-        -- Terminal
         , ("M-<Return>", spawn myTerminal)
 
         , ("M-b", spawn "ungoogled-chromium")
         , ("M-M1-b", spawn "brave-browser")
         , ("S-M1-f", spawn "thunar")
 
-        -- Run Prompt
-        , ("M-d", shellPrompt myXPConfig)   -- Shell Prompt
+        , ("M-d", shellPrompt myXPConfig)
         
-        -- Scratchpads
         , ("M1-<Space>", namedScratchpadAction myScratchPads "terminal")
         , ("M-s t", namedScratchpadAction myScratchPads "tauonmb")
         , ("M-s c", namedScratchpadAction myScratchPads "calculator")
@@ -92,16 +87,14 @@ myKeys =
         , ("M-s n", namedScratchpadAction myScratchPads "ncmpcpp")
         , ("M-s b", namedScratchpadAction myScratchPads "newsboat")
 
-        -- Windows
         , ("M-S-c", kill1)                           
         , ("M-S-a", killAll)                         
         , ("M-C-<Right>", nextWS)
         , ("M-C-<Left>", prevWS)
-        --, ("M1-<Tab>", moveTo Next nonEmptyNonNSP)
+
         , ("M1-<Tab>", toggleWS' ["NSP"])
         , ("M1-C-<Tab>", moveTo Prev nonEmptyNonNSP)
         
-        -- Go To Workspace
         , ("M1-1",   windows $ W.greedyView $ myWorkspaces !! 0)
         , ("M1-2",   windows $ W.greedyView $ myWorkspaces !! 1)
         , ("M1-3",   windows $ W.greedyView $ myWorkspaces !! 2)
@@ -111,96 +104,59 @@ myKeys =
         , ("M1-w c",   windows $ W.greedyView $ myWorkspaces !! 5)
         , ("M1-w x",   windows $ W.greedyView $ myWorkspaces !! 8)
 
-        -- Floating windows
-        , ("M-f", sendMessage (T.Toggle "floats"))       -- Toggles my 'floats' layout
-        , ("M-<Delete>", withFocused $ windows . W.sink) -- Push floating window back to tile
-        , ("M-<XF86WheelButton>", withFocused $ windows . W.sink) -- Push floating window back to tile
-        , ("M-S-<Delete>", sinkAll)                      -- Push ALL floating windows to tile
+        , ("M-f", sendMessage (T.Toggle "floats"))       
+        , ("M-<Delete>", withFocused $ windows . W.sink) 
+        , ("M-<XF86WheelButton>", withFocused $ windows . W.sink) 
+        , ("M-S-<Delete>", sinkAll)                     
         , ("M-C-h", withFocused (keysMoveWindow (-200,0)))
         , ("M-C-l", withFocused (keysMoveWindow (200,0)))
         , ("M-C-j", withFocused (keysMoveWindow (0,200)))
         , ("M-C-k", withFocused (keysMoveWindow (0,-200)))
 
-        -- Grid Select (CTRL-g followed by a key)
         , ("C-g g", spawnGrid)
-        , ("C-g t", goToSelected $ mygridConfig myColorizer)  -- goto selected window
-        , ("C-g b", bringSelected $ mygridConfig myColorizer) -- bring selected window
+        , ("C-g t", goToSelected $ mygridConfig myColorizer)  
+        , ("C-g b", bringSelected $ mygridConfig myColorizer) 
 
-    -- KB_GROUP Other Dmenu Prompts
-    -- In Xmonad and many tiling window managers, M-p is the default keybinding to
-    -- launch dmenu_run, so I've decided to use M-p plus KEY for these dmenu scripts.
---      , ("M-p h", spawn "dm-hub")           -- allows access to all dmscripts
---      , ("M-p a", spawn "dm-sounds")        -- choose an ambient background
---      , ("M-p b", spawn "dm-setbg")         -- set a background
-        , ("M-p c", spawn "dtos-colorscheme") -- choose a colorscheme
---      , ("M-p C", spawn "dm-colpick")       -- pick color from our scheme
---      , ("M-p e", spawn "dm-confedit")      -- edit config files
---      , ("M-p i", spawn "dm-maim")          -- screenshots (images)
---      , ("M-p k", spawn "dm-kill")          -- kill processes
---      , ("M-p m", spawn "dm-man")           -- manpages
---      , ("M-p n", spawn "dm-note")          -- store one-line notes and copy them
---      , ("M-p o", spawn "dm-bookman")       -- qutebrowser bookmarks/history
---      , ("M-p p", spawn "passmenu")         -- passmenu
---      , ("M-p q", spawn "dm-logout")        -- logout menu
---      , ("M-p r", spawn "dm-reddit")        -- reddio (a reddit viewer)
---      , ("M-p s", spawn "dm-websearch")     -- search various search engines
---      , ("M-p t", spawn "dm-translate")     -- translate text (Google Translate)
-
-
-        -- Windows navigation
-        , ("M-m", windows W.focusMaster)     -- Move focus to the master window
-        , ("M-j", windows W.focusDown)       -- Move focus to the next window
-        , ("M-k", windows W.focusUp)         -- Move focus to the prev window
-      --, ("M-S-m", windows W.swapMaster)    -- Swap the focused window and the master window
-        , ("M-S-j", windows W.swapDown)      -- Swap focused window with next window
-        , ("M-S-k", windows W.swapUp)        -- Swap focused window with prev window
-        , ("M-<Backspace>", promote)         -- Moves focused window to master, others maintain order
-        , ("M1-S-<Tab>", rotSlavesDown)      -- Rotate all windows except master and keep focus in place
-      --, ("M1-C-<Tab>", rotAllDown)         -- Rotate all the windows in the current stack
+        , ("M-m", windows W.focusMaster)     
+        , ("M-j", windows W.focusDown)       
+        , ("M-k", windows W.focusUp)         
+        , ("M-S-j", windows W.swapDown)      
+        , ("M-S-k", windows W.swapUp)        
+        , ("M-<Backspace>", promote)         
+        , ("M1-S-<Tab>", rotSlavesDown)      
+      --, ("M-S-m", windows W.swapMaster)    
+      --, ("M1-C-<Tab>", rotAllDown)         
       --, ("M-S-s", windows copyToAll)
         , ("M-C-s", killAllOtherCopies)
 
-        -- Layouts
-        , ("M-<Tab>", sendMessage NextLayout)                -- Switch to next layout
+        , ("M-<Tab>", sendMessage NextLayout)               
         , ("M-C-M1-<Up>", sendMessage Arrange)
         , ("M-C-M1-<Down>", sendMessage DeArrange)
-        , ("M-<Space>", sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts) -- Toggles noborder/full
-        , ("M-S-<Space>", sendMessage ToggleStruts)       -- Toggles struts
-        , ("M-S-n", sendMessage $ MT.Toggle NOBORDERS)      -- Toggles noborder
-        , ("M-<KP_Multiply>", sendMessage (IncMasterN 1))   -- Increase number of clients in master pane
-        , ("M-<KP_Divide>", sendMessage (IncMasterN (-1)))  -- Decrease number of clients in master pane
-        , ("M-S-<KP_Multiply>", increaseLimit)              -- Increase number of windows
-        , ("M-S-<KP_Divide>", decreaseLimit)                -- Decrease number of windows
+        , ("M-<Space>", sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts) 
+        , ("M-S-<Space>", sendMessage ToggleStruts)         
+        , ("M-S-n", sendMessage $ MT.Toggle NOBORDERS)      
+        , ("M-<KP_Multiply>", sendMessage (IncMasterN 1))   
+        , ("M-<KP_Divide>", sendMessage (IncMasterN (-1)))  
+        , ("M-S-<KP_Multiply>", increaseLimit)              
+        , ("M-S-<KP_Divide>", decreaseLimit)                
 
-    -- KB_GROUP Increase/decrease spacing (gaps)
         , ("M-h", sendMessage Shrink)                       -- Shrink horiz window width
         , ("M-l", sendMessage Expand)                       -- Expand horiz window width
         , ("C-M1-j", decWindowSpacing 4)                    -- Decrease window spacing
         , ("C-M1-k", incWindowSpacing 4)                    -- Increase window spacing
-        , ("C-M1-M-h", decScreenSpacing 4)        -- Decrease screen spacing
-        , ("C-M1-M-l", incScreenSpacing 4)             -- Increase screen spacing
+        , ("C-M1-M-h", decScreenSpacing 4)                  -- Decrease screen spacing
+        , ("C-M1-M-l", incScreenSpacing 4)                  -- Increase screen spacing
 
-        -- Workspaces
-        , ("M-S-<KP_Add>", shiftTo Next nonNSP >> moveTo Next nonNSP)       -- Shifts focused window to next ws
-        , ("M-S-<KP_Subtract>", shiftTo Prev nonNSP >> moveTo Prev nonNSP)  -- Shifts focused window to prev ws
-
-        -- Emacs (CTRL-e followed by a key)
-        --, ("C-e e", spawn "emacsclient -c -a 'emacs'")                            -- start emacs
-
+        , ("M-S-<KP_Add>", shiftTo Next nonNSP >> moveTo Next nonNSP)       
+        , ("M-S-<KP_Subtract>", shiftTo Prev nonNSP >> moveTo Prev nonNSP)  
         ]
-        -- Appending search engine prompts to keybindings list.
-        -- Look at "search engines" section of this config for values for "k".
         ++ [("M-s " ++ k, S.promptSearch dtXPConfig' f) | (k,f) <- searchList ]
         ++ [("M-S-s " ++ k, S.selectSearch f) | (k,f) <- searchList ]
-        -- Appending some extra xprompts to keybindings list.
-        -- Look at "xprompt settings" section this of config for values for "k".
         ++ [("M-p " ++ k, f dtXPConfig') | (k,f) <- promptList ]
         ++ [("M-p " ++ k, f dtXPConfig' g) | (k,f,g) <- promptList' ]
-        -- The following lines are needed for named scratchpads.
+
           where nonNSP          = WSIs (return (\ws -> W.tag ws /= "nsp"))
                 nonEmptyNonNSP  = WSIs (return (\ws -> isJust (W.stack ws) && W.tag ws /= "nsp"))
-
-
 
 myXPConfig :: XPConfig
 myXPConfig = dtXPConfig 

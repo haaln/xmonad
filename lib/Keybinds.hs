@@ -46,15 +46,15 @@ import Config
 
 promptList :: [(String, XPConfig -> X ())]
 promptList = [ ("m", manPrompt)          
-             , ("p", passPrompt)        -- requires pass 
-             , ("g", passGeneratePrompt)-- requires pass 
-             , ("r", passRemovePrompt)  -- requires pass 
+             , ("p", passPrompt)        
+             , ("g", passGeneratePrompt)
+             , ("r", passRemovePrompt)  
              , ("s", sshPrompt)          
              , ("x", xmonadPrompt)       
              ]
 
 promptList' :: [(String, XPConfig -> String -> X (), String)]
-promptList' = [ ("c", calcPrompt, "qalc")         -- requires qalculate-gtk
+promptList' = [ ("c", calcPrompt, "qalc")         
               ]
      
 

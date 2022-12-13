@@ -35,9 +35,6 @@ myNormColor   = colorBack
 myFocusColor :: String
 myFocusColor  = color17  
 
---myMouse x  = [ (0, button4), (\w -> focus w >> kill) ]
---newMouse x = M.union (mouseBindings def x) (M.fromList (myMouse x))
-
 altMask :: KeyMask
 altMask = mod1Mask         
 

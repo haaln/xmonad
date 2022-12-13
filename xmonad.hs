@@ -22,7 +22,7 @@ main = do
 
     xmonad $ ewmhFullscreen . docks $ def
      { manageHook         = myManageHook
-     ,handleEventHook     = myEventHook
+     , handleEventHook    = myEventHook
      , modMask            = myModMask
      , terminal           = myTerminal
      , startupHook        = myStartupHook

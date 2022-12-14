@@ -5,6 +5,7 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.EZConfig
 import XMonad.Util.Run
+import XMonad.Layout.SimpleFloat
 
 import Hooks.Startup
 import Config
@@ -26,7 +27,7 @@ main = do
      , modMask            = myModMask
      , terminal           = myTerminal
      , startupHook        = myStartupHook
-     , layoutHook         = myLayoutHook
+     , layoutHook         = myLayoutHook 
      , workspaces         = myWorkspaces
      , borderWidth        = myBorderWidth
      , normalBorderColor  = myNormColor

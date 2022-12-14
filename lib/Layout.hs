@@ -12,6 +12,7 @@ import XMonad.Layout.Renamed
 import XMonad.Layout.ShowWName
 import XMonad.Layout.SubLayouts
 import XMonad.Layout.Simplest
+import XMonad.Layout.SimpleFloat
 import XMonad.Layout.Spacing
 import XMonad.Layout.WindowNavigation
 import XMonad.Layout.WindowArranger 

@@ -15,7 +15,7 @@ myModMask :: KeyMask
 myModMask = mod4Mask       
 
 myTerminal :: String
-myTerminal = "alacritty" 
+myTerminal = "kitty" 
 
 myBrowser :: String
 myBrowser = "ungoogled-chromium"

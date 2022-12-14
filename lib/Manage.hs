@@ -66,27 +66,32 @@ myManageHook =
     unfloat = ask >>= doF . W.sink
 
     myBFloats = [ ]
-    myMFloats = [ "nsxiv" ]
+    myMFloats = [ "nsxiv", "pavucontrol" ]
     mySFloats = [ "Virtual Machine Manager" ]
-    myCFloats = [ "Steam", "org.gnome.DejaDup", "VirtualBox Manager"]
-    myIgnores = [ "desktop_window", "kdesktop"]
+    myInfixOf = [ ]
+    myFFloats = [ ]
+    myCFloats = [ ]
+    myIgnores = [ "desktop_window", "kdesktop", "Picture in Picture", "Picture-in-Picture"]
     www       = [ "Brave-browser", "Chromium", "qutebrowser", "chromium-browser", "firefox"]
     term      = [ ]
     file      = [ "Thunar","Org.gnome.Nautilus","PCManFM","Ranger","lf"]
-    doc       = [ "megasync", "qBittorrent","transmission","KeepassXC"]
-    misc      = [ "Code","Emacs","org.remmina.Remmina", "jetbrains-idea-ce", "VirtualBox Manager","virt-manager", "Virtual Machine Manager"]
+    doc       = [ "megasync", "qBittorrent","transmission"]
+    misc      = [ "Code","Emacs","org.remmina.Remmina", "jetbrains-idea-ce"
+                , "VirtualBox Manager"
+                ]
     irc       = [ "thunderbird"]
     tex       = [ ]
     kvm       = [ "mpvbeef", "Gmpc","Ncmpcpp","tauon"]
-    game      = [ "Steam", "VirtualBox", "Wine", "net-runelite-client-RuneLite", "net-runelite-client-Launcher"] 
-    myInfixOf = [ "Steam" ]
-    myFFloats = [ ]
+    game      = [ "Steam", "VirtualBox", "Wine", "net-runelite-client-RuneLite", "net-runelite-client-Launcher"
+                , "m64py"
+                ]
     myFloats  = [ "pop-up", "floating", "dialog", "Places", "File Operation Progress"
                 , "Gcr-Prompter", "All Files", "xdg-desktop-portal-gnome"
                 , "menu", "center","dialog", "GtkFileChooserDialog"
                 , "_NET_WM_WINDOW_TYPE_SPLASH", "_OL_DECOR_CLOSE"
                 , "_NET_WM_WINDOW_TYPE_DIALOG", "org.gnome.DejaDup"
                 , "VirtualBox Machine", "VirtualBox Manager", "Zoom", "Virtual Machine Manager"
-                , "nsxiv", "sxiv", "megasync", "mpv", "m64py", "RuneLite Launcher"
+                , "nsxiv", "sxiv", "megasync", "mpv", "m64py", "RuneLite Launcher", "Picture in Picture"
+                , "org.gnome.DejaDup"
                 ]
 

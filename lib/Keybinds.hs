@@ -86,6 +86,7 @@ myKeys =
         , ("M-s o", namedScratchpadAction myScratchPads "OBS")
         , ("M-s n", namedScratchpadAction myScratchPads "ncmpcpp")
         , ("M-s b", namedScratchpadAction myScratchPads "newsboat")
+        , ("M-s k", namedScratchpadAction myScratchPads "keepassxc")
 
         , ("M-S-c", kill1)                           
         , ("M-S-a", killAll)                         

@@ -5,6 +5,8 @@ import XMonad.Hooks.WindowSwallowing
 import Data.Monoid (All)
 import qualified XMonad.Util.ExtensibleState as XS
 
+import Config
+
 data SwallowState = Swallow | NoSwallow
   deriving (Eq, Show, Read, Typeable)
 
@@ -20,7 +22,7 @@ swallowHook :: Event -> X All
 swallowHook e = do
   shouldSwallow <- XS.get
   case shouldSwallow of
-    Swallow   -> swallowEventHook (className =? "Alacritty") (return True) e
+    Swallow   -> swallowEventHook (className =? myTerminal) (return True) e
     NoSwallow -> return mempty
 
 swallowToggle :: X ()

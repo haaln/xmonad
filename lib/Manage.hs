@@ -25,6 +25,14 @@ myManageHook =
  where
   manageRules = composeAll . concat $
    [ [transience']
+   , [isDialog --> doCenterFloat]
+   , [isFullscreen --> doFullFloat]
+   , [matchAny x <&&> title /=? x --> doFloat         | x <- myTFloats]
+   , [matchAny x --> forceBigFloat                    | x <- myBFloats]
+   , [matchAny x --> forceMediumFloat                 | x <- myMFloats]
+   , [matchAny x --> forceSmallFloat                  | x <- mySFloats]
+   , [matchAny x --> doFloat                          | x <- myFloats]
+   , [matchAny x --> doIgnore                         | x <- myIgnores]
    , [matchAny x --> doShiftAndGo (myWorkspaces !! 0) | x <- www]
    , [matchAny x --> doShiftAndGo (myWorkspaces !! 1) | x <- term]
    , [matchAny x --> doShiftAndGo (myWorkspaces !! 2) | x <- file]
@@ -34,29 +42,17 @@ myManageHook =
    , [matchAny x --> doShiftAndGo (myWorkspaces !! 7) | x <- tex]
    , [matchAny x --> doShiftAndGo (myWorkspaces !! 6) | x <- kvm]
    , [matchAny x --> doShiftAndGo (myWorkspaces !! 8) | x <- game]
-   , [fmap ( x `isInfixOf`) className --> doCenterFloat | x <- myInfixOf]
-   , [matchAny x <&&> title /=? x --> doCenterFloat | x <- myCFloats]
-   , [matchAny x --> forceBigFloat    | x <- myBFloats]
-   , [matchAny x --> forceMediumFloat | x <- myMFloats]
-   , [matchAny x --> forceSmallFloat  | x <- mySFloats]
-   , [matchAny x --> doFloat          | x <- myFloats]
-   , [matchAny x --> doIgnore         | x <- myIgnores]
-   , [matchAny "no-focus" --> doF W.focusDown]
-   , [matchAny "floating" --> doCenterFloat <+> doF W.focusDown]
    , [isDialog --> doCenterFloat]
-   , [isFullscreen --> doFullFloat]
    , [namedScratchpadManageHook myScratchPads]
-   , [title ~? "Connection" <&&> matchAny "virt-manager"  --> doFloat | x <- myFloats]
    ]
    where
     matchAny :: String -> Query Bool
-    matchAny s = className =? s <||> title =? s <||> resource =? s <||> appName =? s 
+    matchAny s = appName =? s <||> className =? s <||> resource =? s <||> title =? s 
      <||> stringProperty "WM_WINDOW_ROLE" =? s 
      <||> stringProperty "_NET_WM_WINDOW_ROLE" =? s 
      <||> stringProperty "WM_WINDOW_TYPE" =? s
      <||> stringProperty "_NET_WM_WINDOW_TYPE" =? s 
      <||> stringProperty "_OL_DECOR_DEL" =? s 
-     <||> stringProperty "_NET_WM_NAME" =? s
      <||> stringProperty "WM_ICON_NAME" =? s
      <||> stringProperty "_NET_WM_ICON_NAME" =? s
 
@@ -70,7 +66,7 @@ myManageHook =
     mySFloats = [ "Virtual Machine Manager" ]
     myInfixOf = [ ]
     myFFloats = [ ]
-    myCFloats = [ ]
+    myTFloats = [ "Steam" ]
     myIgnores = [ "desktop_window", "kdesktop", "Picture in Picture", "Picture-in-Picture"]
     www       = [ "Brave-browser", "Chromium", "qutebrowser", "chromium-browser", "firefox"]
     term      = [ ]
@@ -95,3 +91,6 @@ myManageHook =
                 , "org.gnome.DejaDup"
                 ]
 
+
+-- , [matchAny "no-focus" --> doF W.focusDown]
+-- , [matchAny "floating" --> doCenterFloat <+> doF W.focusDown]

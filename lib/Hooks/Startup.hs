@@ -9,7 +9,7 @@ myStartupHook :: X ()
 myStartupHook = do
           spawnOnce "$HOME/.config/layout.sh &"
           spawnOnce "picom --config $HOME/.config/picom/picom.conf &"
-          spawnOnce "imwheel &"
+--        spawnOnce "imwheel &"
           spawnOnce "xfce4-power-manager &"
           spawnOnce "nitrogen --restore &"
           spawnOnce "keepassxc &"

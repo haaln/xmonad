@@ -21,7 +21,7 @@ main = do
     xmproc0 <- spawnPipe "xmobar $HOME/.config/xmobar/xmobarrc0"
     xmproc1 <- spawnPipe "xmobar $HOME/.config/xmobar/xmobarrc1"
 
-    xmonad $ ewmhFullscreen . docks $ def
+    xmonad $ ewmh $ ewmhFullscreen $ docks $ def
      { manageHook         = myManageHook
      , handleEventHook    = myEventHook
      , modMask            = myModMask

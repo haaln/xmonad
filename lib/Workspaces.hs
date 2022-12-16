@@ -2,15 +2,15 @@ module Workspaces where
 
 import XMonad
 
-www = " web"
-term = " term"
-file = " file"
-doc = " doc"
-misc = " misc"
-irc= " irc"
-tex = " tex"
+www = "\63206"
+term = "\61728"
+file = "\61564"
+doc = "\63256"
+misc = "\60091"
+irc= "\63111"
+tex = "tex"
 kvm = " kvm"
-game = " steam"
+game = "\63381"
 
 xmobarEscape :: String -> String
 xmobarEscape = concatMap doubleLts

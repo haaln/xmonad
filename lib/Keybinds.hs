@@ -117,8 +117,8 @@ myKeys =
         , ("M-C-k", withFocused (keysMoveWindow (0,-200)))
 
         , ("C-g g", spawnGrid)
-        , ("C-g t", goToSelected $ mygridConfig myColorizer)  
-        , ("C-g b", bringSelected $ mygridConfig myColorizer) 
+        , ("C-g t", goToGrid)
+        , ("C-g b", goBringGrid)
 
         , ("M-m", windows W.focusMaster)     
         , ("M-j", windows W.focusDown)       

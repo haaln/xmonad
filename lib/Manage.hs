@@ -71,25 +71,13 @@ myManageHook =
     www       = [ "Brave-browser", "Chromium", "qutebrowser", "chromium-browser", "firefox"]
     term      = [ ]
     file      = [ "Thunar","Org.gnome.Nautilus","PCManFM","Ranger","lf"]
-    doc       = [ "megasync", "qBittorrent","transmission"]
-    misc      = [ "Code","Emacs","org.remmina.Remmina", "jetbrains-idea-ce"
-                , "VirtualBox Manager"
-                ]
+    doc       = [ "Code","Emacs","org.remmina.Remmina", "jetbrains-idea-ce" ]
+    misc      = [ "megasync", "qBittorrent","transmission"]
     irc       = [ "thunderbird"]
     tex       = [ ]
-    kvm       = [ "mpvbeef", "Gmpc","Ncmpcpp","tauon"]
-    game      = [ "Steam", "VirtualBox", "Wine", "net-runelite-client-RuneLite", "net-runelite-client-Launcher"
-                , "m64py"
-                ]
-    myFloats  = [ "pop-up", "floating", "dialog", "Places", "File Operation Progress"
-                , "Gcr-Prompter", "All Files", "xdg-desktop-portal-gnome"
-                , "menu", "center","dialog", "GtkFileChooserDialog"
-                , "_NET_WM_WINDOW_TYPE_SPLASH", "_OL_DECOR_CLOSE"
-                , "_NET_WM_WINDOW_TYPE_DIALOG", "org.gnome.DejaDup"
-                , "VirtualBox Machine", "VirtualBox Manager", "Zoom", "Virtual Machine Manager"
-                , "nsxiv", "sxiv", "megasync", "mpv", "m64py", "RuneLite Launcher", "Picture in Picture"
-                , "org.gnome.DejaDup"
-                ]
+    kvm       = [ ]
+    game      = [ "Steam", "VirtualBox", "Wine", "net-runelite-client-RuneLite", "net-runelite-client-Launcher", "m64py" ]
+    myFloats  = [ "pop-up", "floating", "dialog", "Places", "File Operation Progress", "Gcr-Prompter", "All Files", "xdg-desktop-portal-gnome", "menu", "center", "GtkFileChooserDialog", "_NET_WM_WINDOW_TYPE_SPLASH", "_OL_DECOR_CLOSE", "_NET_WM_WINDOW_TYPE_DIALOG", "org.gnome.DejaDup", "VirtualBox Machine", "VirtualBox Manager", "Zoom", "Virtual Machine Manager", "nsxiv", "sxiv", "megasync", "mpv", "m64py", "RuneLite Launcher", "Picture in Picture", "org.gnome.DejaDup", "page-info" ]
 
 
 -- , [matchAny "no-focus" --> doF W.focusDown]

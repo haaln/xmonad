@@ -6,7 +6,6 @@ import XMonad.Layout.GridVariants
 import XMonad.Actions.GridSelect
 import Config
 
-
 myColorizer = anyColor "#82AAFF"
    where
     anyColor color _ isFg = do
@@ -14,8 +13,7 @@ myColorizer = anyColor "#82AAFF"
              then (color,"#000000")
              else ("#282c34","#FFFFFF")
 
-mygridConfig :: p -> GSConfig Window
-mygridConfig x = (buildDefaultGSConfig myColorizer)
+myGridConfig x = (buildDefaultGSConfig myColorizer)
     { gs_cellheight   = 40
     , gs_cellwidth    = 200
     , gs_cellpadding  = 6
@@ -24,17 +22,9 @@ mygridConfig x = (buildDefaultGSConfig myColorizer)
     , gs_font         = myFont
     }
 
-
-spawnGrid = runSelectedAction (myGridConfig myColorizer) myAppGrid
-
-myGridConfig x = (buildDefaultGSConfig x)
-    { gs_cellheight   = 40
-    , gs_cellwidth    = 200
-    , gs_cellpadding  = 6
-    , gs_originFractX = 0.5
-    , gs_originFractY = 0.5
-    , gs_font         = myFont
-    }
+goToGrid = goToSelected (myGridConfig myAppGrid)
+goBringGrid = bringSelected (myGridConfig myAppGrid)
+spawnGrid = runSelectedAction (myGridConfig myAppGrid) myAppGrid
 
 myAppGrid = [("Qutebrowser", spawn "qutebrowser")
              , ("Firefox", spawn "firefox")

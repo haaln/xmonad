@@ -4,6 +4,8 @@ import XMonad
 import XMonad.Util.EZConfig 
 import XMonad.Layout.GridVariants 
 import XMonad.Actions.GridSelect
+import qualified XMonad.StackSet as W
+import Workspaces
 import Config
 
 myColorizer = anyColor "#82AAFF"
@@ -30,7 +32,7 @@ myAppGrid = [("Qutebrowser", spawn "qutebrowser")
              , ("Firefox", spawn "firefox")
              , ("RuneLite", spawn "runelite")
              , ("qBittorent", spawn "qbittorrent")
-             , ("Mupen64Plus Emulator", spawn "m64py")
+             , ("Ranger", spawn (myTerminal <> " -e ranger"))
              , ("Steam", spawn "steam")
              , ("Thunderbird", spawn "thunderbird")
              , ("OBS", spawn "obs")
@@ -38,17 +40,17 @@ myAppGrid = [("Qutebrowser", spawn "qutebrowser")
              , ("LibreOffice Writer", spawn "lowriter")
              , ("Virt Manager", spawn "virt-manager")
              , ("Web Browser", spawn myBrowser)
-             , ("Thunar", spawn "thunar")
+             , ("Mupen64Plus Emulator", spawn "m64py")
              , ("IntelliJ IDEA", spawn "idea")
              , ("Visual Studio Code", spawn "code")
              , ("KeePassXC", spawn "keepassxc")
              , ("Kate Text Editor", spawn "kate")
              , ("Tauon Music Box", spawn "tauon")
-             , ("Newsboat RSS", spawn (myTerminal <> " --class 'newsboat' newsboat"))
+             , ("Newsboat RSS", spawn (myTerminal <> " --class 'newsboat' -e newsboat"))
              , ("Remmina", spawn "remmina")
              , ("Deja-Dup Backup", spawn "deja-dup")
              , ("PavuControl Volume", spawn "pavucontrol")
-             , ("ncmpcpp Music player", spawn (myTerminal <> " --class 'ncmpcpp'  ncmpcpp"))
+             , ("ncmpcpp Music player", spawn (myTerminal <> " --class 'ncmpcpp' -e ncmpcpp"))
              , ("Brave", spawn "brave")
-             , ("XMonad Config", spawn (myTerminal <> " --config .config/kitty/kitty.conf  -c cd .config/xmonad"))
+             , ("Thunar", spawn "thunar")
              ]

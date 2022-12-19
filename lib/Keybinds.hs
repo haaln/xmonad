@@ -99,6 +99,7 @@ myKeys =
         , ("M1-1", windows $ W.greedyView $ myWorkspaces !! 0)
         , ("M1-2", windows $ W.greedyView $ myWorkspaces !! 1)
         , ("M1-3", windows $ W.greedyView $ myWorkspaces !! 2)
+        , ("M1-w w", windows $ W.greedyView $ myWorkspaces !! 0)
         , ("M1-w f", windows $ W.greedyView $ myWorkspaces !! 2)
         , ("M1-w d", windows $ W.greedyView $ myWorkspaces !! 3)
         , ("M1-w a", windows $ W.greedyView $ myWorkspaces !! 4)

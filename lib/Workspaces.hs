@@ -6,12 +6,12 @@ www = "\63206"
 term = "\61728"
 file = "\61564"
 doc = "\63256"
-misc = "\60091"
+misc = "\63277"
 irc= "\63111"
-tex = "tex"
-kvm = " kvm"
+tex = "\61489"
+kvm = "\62599"
 game = "\63381"
-
+--穀禎﬐
 xmobarEscape :: String -> String
 xmobarEscape = concatMap doubleLts
   where

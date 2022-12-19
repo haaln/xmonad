@@ -16,7 +16,7 @@ myScratchPads = [ NS "terminal" (myTerminal <> " --class 'scratchpad'") (classNa
                 , NS "tauonmb" "tauon" (className =? "Tauon Music Box") forceBigFloat
                 , NS "calculator" "qalculate-gtk" (className =? "Qalculate-gtk") forceSmallFloat
                 , NS "OBS" "obs" (className =? "obs")  forceBigFloat
-                , NS "ncmpcpp" (myTerminal <> " --class 'ncmpcpp' ncmpcpp")  (className =? "ncmpcpp") forceMediumFloat
-                , NS "newsboat" (myTerminal <> " --class 'newsboat' newsboat") (className =? "newsboat") forceMediumFloat
+                , NS "ncmpcpp" (myTerminal <> " --class 'ncmpcpp' -e ncmpcpp")  (className =? "ncmpcpp") forceMediumFloat
+                , NS "newsboat" (myTerminal <> " --class 'newsboat' -e newsboat") (className =? "newsboat") forceMediumFloat
                 , NS "keepassxc" "keepassxc" (className =? "KeePassXC") forceBigFloat
                 ]

@@ -16,6 +16,7 @@ myModMask = mod4Mask
 
 myTerminal :: String
 myTerminal = "alacritty" 
+myTerminalClass = "Alacritty" 
 
 myBrowser :: String
 myBrowser = "ungoogled-chromium"

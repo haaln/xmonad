@@ -22,7 +22,7 @@ swallowHook :: Event -> X All
 swallowHook e = do
   shouldSwallow <- XS.get
   case shouldSwallow of
-    Swallow   -> swallowEventHook (className =? myTerminalClass) (return True) e
+    Swallow   -> swallowEventHook (className =? myTerminalClass <||> (className =? "scratchpad")) (return True) e
     NoSwallow -> return mempty
 
 swallowToggle :: X ()

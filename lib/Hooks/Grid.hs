@@ -53,4 +53,5 @@ myAppGrid = [("Qutebrowser", spawn "qutebrowser")
              , ("ncmpcpp Music player", spawn (myTerminal <> " --class 'ncmpcpp' -e ncmpcpp"))
              , ("Brave", spawn "brave")
              , ("Thunar", spawn "thunar")
+             , ("Doplhin Emulator", spawn "dolphin-emu")
              ]

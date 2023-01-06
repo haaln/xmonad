@@ -12,7 +12,7 @@ myStartupHook = do
 --        spawnOnce "imwheel &"
           spawnOnce "xfce4-power-manager &"
           spawnOnce "nitrogen --restore &"
-          spawnOnce "keepassxc &"
+--        spawnOnce "keepassxc &"
 
           setDefaultCursor xC_left_ptr
           setWMName "LG3D"

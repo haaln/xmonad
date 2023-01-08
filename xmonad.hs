@@ -18,8 +18,8 @@ import Log
 
 main :: IO ()
 main = do
-    xmproc0 <- spawnPipe "xmobar $HOME/.config/xmobar/xmobarrc0"
-    xmproc1 <- spawnPipe "xmobar $HOME/.config/xmobar/xmobarrc1"
+    xmproc0 <- spawnPipe "xmobar $HOME/.config/xmonad/lib/xmobar1.hs"
+    xmproc1 <- spawnPipe "xmobar $HOME/.config/xmonad/lib/xmobar2.hs"
 
     xmonad $ ewmh $ ewmhFullscreen $ docks $ def
      { manageHook         = myManageHook

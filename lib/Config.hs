@@ -16,10 +16,10 @@ myModMask = mod4Mask
 
 myTerminal :: String
 myTerminal = "alacritty" 
-myTerminalClass = "Alacritty" 
+myTerminalClass = "Alacritty" -- lazy fix for swallowing
 
 myBrowser :: String
-myBrowser = "ungoogled-chromium"
+myBrowser = "chromium"
 
 myEditor :: String
 myEditor = "vim"

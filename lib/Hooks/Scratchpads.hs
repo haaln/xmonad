@@ -14,7 +14,7 @@ import Config
 myScratchPads :: [NamedScratchpad]
 myScratchPads = [ NS "terminal" (myTerminal <> " --class 'scratchpad'") (className =? "scratchpad") forceBigFloat
                 , NS "tauonmb" "tauon" (className =? "Tauon Music Box") forceBigFloat
-                , NS "calculator" "qalculate-gtk" (className =? "Qalculate-gtk") forceSmallFloat
+                , NS "calculator" "qalculate-gtk" (className =? "Qalculate-gtk") forceMediumFloat
                 , NS "OBS" "obs" (className =? "obs")  forceBigFloat
                 , NS "ncmpcpp" (myTerminal <> " --class 'ncmpcpp' -e ncmpcpp")  (className =? "ncmpcpp") forceMediumFloat
                 , NS "newsboat" (myTerminal <> " --class 'newsboat' -e newsboat") (className =? "newsboat") forceMediumFloat

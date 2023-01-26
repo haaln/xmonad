@@ -6,7 +6,8 @@ import XMonad.Prompt.FuzzyMatch
 import XMonad.Layout.Tabbed
 import XMonad.Hooks.DynamicLog
 
-import Colors.DoomOne
+
+import Colors.Winter
 
 myFont :: String
 myFont = "xft:JetBrains Mono:size=14:antialias=true:hinting=true"
@@ -34,7 +35,7 @@ myNormColor :: String
 myNormColor   = colorBack
 
 myFocusColor :: String
-myFocusColor  = color17  
+myFocusColor  = color08
 
 altMask :: KeyMask
 altMask = mod1Mask         
@@ -42,11 +43,11 @@ altMask = mod1Mask
 dtXPConfig :: XPConfig
 dtXPConfig = def
       { font                = myFont
-      , bgColor             = "#282c34"
-      , fgColor             = "#bbc2cf"
-      , bgHLight            = "#82AAFF"
-      , fgHLight            = "#000000"
-      , borderColor         = "#535974"
+      , bgColor             = colorBack
+      , fgColor             = colorFore
+      , bgHLight            = color07 
+      , fgHLight            = color01 
+      , borderColor         = color15
       , promptBorderWidth   = 0
       , position            = Top
       , height              = 20
@@ -66,30 +67,32 @@ dtXPConfig' = dtXPConfig
       }
 
 myTabTheme = def { fontName            = myFont
-                 , activeColor         = color15
+                 , activeColor         = colorBack
                  , inactiveColor       = color08
                  , activeBorderColor   = color15
                  , inactiveBorderColor = colorBack
                  , activeTextColor     = colorBack
-                 , inactiveTextColor   = "#b3afc2" -- color16
+                 , inactiveTextColor   = color09--"#b3afc2" -- color16
                  }
 
 myTabConfig = def { fontName            = myFont
-                  , activeColor         = "#282c34"
-                  , inactiveColor       = "#3e445e"
-                  , activeBorderColor   = "#282c34"
-                  , inactiveBorderColor = "#282c34"
-                  , activeTextColor     = "#ffffff"
-                  , inactiveTextColor   = "#d0d0d0"
+                  , activeColor         = colorBack
+                  , inactiveColor       = color08
+                  , activeBorderColor   = colorBack
+                  , inactiveBorderColor = colorBack
+                  , activeTextColor     = color08
+                  , inactiveTextColor   = color16
                   }
 
+mySep                  =  "<fc=#666666> <fn=2>|</fn> </fc>"
+
 myXmobarPP =  def
-          { ppCurrent = xmobarColor "#98be65" "" . wrap "[" "]" 
-          , ppVisible = xmobarColor "#98be65" ""
-          , ppHidden = xmobarColor "#82AAFF" "" . wrap "" ""
-          , ppHiddenNoWindows = xmobarColor "#0C4E7C" ""
-          , ppTitle = xmobarColor "#b3afc2" "" 
-          , ppSep =  "<fc=#666666> <fn=2>|</fn> </fc>"
-          , ppUrgent = xmobarColor "C45500" "" . wrap "!" "!"  
+          { ppCurrent = xmobarColor color03 "" . wrap "[" "]" 
+          , ppVisible = xmobarColor color03 ""
+          , ppHidden = xmobarColor color07 "" . wrap "" ""
+          , ppHiddenNoWindows = xmobarColor color13 ""
+          , ppTitle = xmobarColor colorFore "" 
+          , ppSep = mySep
+          , ppUrgent = xmobarColor color10 "" . wrap "!" "!"  
           , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]
           }

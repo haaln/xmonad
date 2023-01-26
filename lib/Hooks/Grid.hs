@@ -7,13 +7,14 @@ import XMonad.Actions.GridSelect
 import qualified XMonad.StackSet as W
 import Workspaces
 import Config
+import Colors.Winter
 
-myColorizer = anyColor "#82AAFF"
+myColorizer = anyColor color07
    where
     anyColor color _ isFg = do
     return $ if isFg
-             then (color,"#000000")
-             else ("#282c34","#FFFFFF")
+             then (color,color01)
+             else (colorBack,color16)
 
 myGridConfig x = (buildDefaultGSConfig myColorizer)
     { gs_cellheight   = 40

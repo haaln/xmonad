@@ -42,9 +42,11 @@ Config {
                                      , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
                                                           , ("us"         , "<fc=#8B0000>US</fc>")
                                                           ]
+                                     , Run MPD ["-t", "<state>"] 10
+                                                          
                                      , Run UnsafeStdinReader
                                      ]
                                      , sepChar = "%"
                                      , alignSep = "}{"
-                                     , template = " %UnsafeStdinReader% }{%cpu% %memory% %disku% %eth1% %date%"
+                                     , template = " %UnsafeStdinReader% }{ %cpu% %memory% %disku% %eth1% %date%"
        }

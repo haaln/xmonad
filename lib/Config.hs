@@ -11,6 +11,7 @@ import Colors.Winter
 
 myFont :: String
 myFont = "xft:JetBrains Mono:size=14:antialias=true:hinting=true"
+myTabFont = "xft:JetBrains Mono:size=12:antialias=true:hinting=true"
 
 myModMask :: KeyMask
 myModMask = mod4Mask       
@@ -66,25 +67,16 @@ dtXPConfig' = dtXPConfig
       { autoComplete        = Nothing
       }
 
-myTabTheme = def { fontName            = myFont
-                 , activeColor         = colorBack
-                 , inactiveColor       = color08
-                 , activeBorderColor   = color15
+myTabTheme = def { fontName            = myTabFont
+                 , activeColor         = color01
+                 , inactiveColor       = colorBack
+                 , activeBorderColor   = color01
                  , inactiveBorderColor = colorBack
-                 , activeTextColor     = colorBack
+                 , activeTextColor     = color16
                  , inactiveTextColor   = color09--"#b3afc2" -- color16
                  }
 
-myTabConfig = def { fontName            = myFont
-                  , activeColor         = colorBack
-                  , inactiveColor       = color08
-                  , activeBorderColor   = colorBack
-                  , inactiveBorderColor = colorBack
-                  , activeTextColor     = color08
-                  , inactiveTextColor   = color16
-                  }
-
-mySep                  =  "<fc=#666666> <fn=2>|</fn> </fc>"
+mySep = "<fc=#666666> <fn=2>|</fn> </fc>"
 
 myXmobarPP =  def
           { ppCurrent = xmobarColor color03 "" . wrap "[" "]" 

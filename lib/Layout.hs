@@ -67,7 +67,8 @@ tall     = renamed [Replace "stack"]
            $ mySpacing mySpacingWidth
            $ ResizableTall 1 (3/100) (1/2) []
 tabs     = renamed [Replace "tabs"]
-           $ tabbed shrinkText myTabConfig
+           -- $ tabbed shrinkText myTabConfig
+           $ tabbed shrinkText myTabTheme
 spirals  = renamed [Replace "spirals"]
            $ subLayout [] (smartBorders Simplest)
            $ mySpacing' mySpacingWidth

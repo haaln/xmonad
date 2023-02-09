@@ -73,7 +73,7 @@ myTabTheme = def { fontName            = myTabFont
                  , activeBorderColor   = color01
                  , inactiveBorderColor = colorBack
                  , activeTextColor     = color16
-                 , inactiveTextColor   = color09--"#b3afc2" -- color16
+                 , inactiveTextColor   = color09
                  }
 
 mySep = "<fc=#666666> <fn=2>|</fn> </fc>"

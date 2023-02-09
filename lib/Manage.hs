@@ -78,7 +78,7 @@ myManageHook =
     tex       = [ ]
     kvm       = [ ]
     game      = [ "Steam", "VirtualBox", "Wine", "net-runelite-client-RuneLite", "net-runelite-client-Launcher", "m64py" ]
-    myFloats  = [ "pop-up", "floating", "dialog", "Places", "File Operation Progress", "Gcr-Prompter", "All Files", "xdg-desktop-portal-gnome", "menu", "center", "GtkFileChooserDialog", "_NET_WM_WINDOW_TYPE_SPLASH", "_OL_DECOR_CLOSE", "_NET_WM_WINDOW_TYPE_DIALOG", "org.gnome.DejaDup", "VirtualBox Machine", "VirtualBox Manager", "Zoom", "Virtual Machine Manager", "nsxiv", "sxiv", "megasync", "mpv", "m64py", "RuneLite Launcher", "Picture in Picture", "org.gnome.DejaDup", "page-info" ]
+    myFloats  = [ "pop-up", "floating", "dialog", "Places", "File Operation Progress", "Gcr-Prompter", "All Files", "xdg-desktop-portal-gnome", "menu", "center", "GtkFileChooserDialog", "_NET_WM_WINDOW_TYPE_SPLASH", "_OL_DECOR_CLOSE", "_NET_WM_WINDOW_TYPE_DIALOG", "org.gnome.DejaDup", "VirtualBox Machine", "VirtualBox Manager", "Zoom", "Virtual Machine Manager", "nsxiv", "sxiv", "megasync", "mpv", "m64py", "RuneLite Launcher", "Picture in Picture", "org.gnome.DejaDup", "page-info"]
 
 
 -- , [matchAny "no-focus" --> doF W.focusDown]

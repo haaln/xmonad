@@ -30,12 +30,12 @@ goBringGrid = bringSelected (myGridConfig myAppGrid)
 spawnGrid = runSelectedAction (myGridConfig myAppGrid) myAppGrid
 
 myAppGrid = [
-               ("Ungoogled Chromium", spawn "chromium")
-             , ("Qutebrowser", spawn "qutebrowser")
+               ("Librewolf", spawn "librewolf")
+             , ("Ungoogled Chromium", spawn "chromium")
              , ("RuneLite", spawn "runelite")
-             , ("qBittorent", spawn "qbittorrent")
-             , ("Ranger", spawn (myTerminal <> " -e ranger"))
              , ("Steam", spawn "steam")
+             , ("Ranger", spawn (myTerminal <> " -e ranger"))
+             , ("Qutebrowser", spawn "qutebrowser")
              , ("Thunderbird", spawn "thunderbird")
              , ("OBS", spawn "obs")
              , ("Emacs", spawn "emacsclient -c -a emacs")
@@ -58,4 +58,5 @@ myAppGrid = [
              , ("Doplhin Emulator", spawn "dolphin-emu")
              , ("Firefox", spawn "firefox")
              , ("Claws Mail", spawn "claws-mail")
+             , ("qBittorent", spawn "qbittorrent")
              ]

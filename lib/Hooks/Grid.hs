@@ -9,6 +9,8 @@ import Workspaces
 import Config
 import Colors.Winter
 
+import Hooks.Scratchpads
+
 myColorizer = anyColor color07
    where
     anyColor color _ isFg = do
@@ -37,7 +39,7 @@ myAppGrid = [
              , ("Ranger", spawn (myTerminal <> " -e ranger"))
              , ("Qutebrowser", spawn "qutebrowser")
              , ("Thunderbird", spawn "thunderbird")
-             , ("OBS", spawn "obs")
+             , ("OBS", namedScratchpadAction myScratchPads "OBS")
              , ("Emacs", spawn "emacsclient -c -a emacs")
              , ("LibreOffice Writer", spawn "lowriter")
              , ("Virt Manager", spawn "virt-manager")

@@ -1,6 +1,6 @@
 Config {         
-                 font              = "xft:VictorMono Nerd Font:pixelsize=15:bold:antialias=true:hinting=true"
-                 , additionalFonts = [ "xft:VictorMono Nerd Font:weight=regular:pixelsize=15:antialias=true:hinting=true" ]
+                 font              = "VictorMono Nerd Font Bold 11"
+                 , additionalFonts = ["VictorMono Nerd Font Bold 15"]
                  , bgColor         = "#282c34"
                  , fgColor         = "#51afef" 
                  , position        = Static { xpos = 1920 , ypos = 0, width = 1920, height = 19 }
@@ -22,14 +22,14 @@ Config {
                                                           , "--normal"   , "darkorange"
                                                           , "--high"     , "red"
                                                           ] 10
-                                     , Run CoreTemp       [ "--template" , "<core0>°C"
-                                                          , "--Low"      , "70"        -- units: °C
-                                                          , "--High"     , "80"        -- units: °C
-                                                       -- , "--low"      , "darkgreen"
-                                                          , "--normal"   , "darkorange"
-                                                          , "--high"     , "red"
-                                                          ] 50
-                                     , Run Memory ["-t", " mem: <used>M (<usedratio> %)"] 20
+                                     --, Run CoreTemp       [ "--template" , "<core0>°C"
+                                     --                   , "--Low"      , "70"        -- units: °C
+                                     --                   , "--High"     , "80"        -- units: °C
+                                     --                -- , "--low"      , "darkgreen"
+                                     --                   , "--normal"   , "darkorange"
+                                     --                   , "--high"     , "red"
+                                     --                   ] 50
+                                     --, Run Memory ["-t", " mem: <used>M (<usedratio> %)"] 20
                                      , Run Memory         [ "--template" ,"<fc=#666666><fn=5>|</fn></fc>mem: <used> MB (<usedratio> %)"
                                                       --  , "--Low"      , "40"        -- units: %
                                                       --  , "--High"     , "80"        -- units: %
@@ -38,11 +38,11 @@ Config {
                                                       --  , "--high"     , "red"
                                                           ] 10
                                      , Run DiskU [("/", "<fc=#666666><fn=5>|</fn></fc>ssd: <free>")] [] 60
-                                     , Run Com "uname" ["-r"] "" 3600
-                                     , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
-                                                          , ("us"         , "<fc=#8B0000>US</fc>")
-                                                          ]
-                                     , Run MPD ["-t", "<state>"] 10
+                                     --, Run Com "uname" ["-r"] "" 3600
+                                     --, Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
+                                     --                   , ("us"         , "<fc=#8B0000>US</fc>")
+                                     --                   ]
+                                     --, Run MPD ["-t", "<state>"] 10
                                      , Run UnsafeStdinReader
                                      ]
                                      , sepChar = "%"

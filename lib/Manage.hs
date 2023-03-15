@@ -34,15 +34,15 @@ myManageHook =
    , [matchAny x --> doFloat                          | x <- myFloats]
    , [matchAny x --> doFloat                          | x <- myInfixOf]
    , [matchAny x --> doIgnore                         | x <- myIgnores]
-   , [matchAny x --> doShiftAndGo (myWorkspaces !! 0) | x <- www]
-   , [matchAny x --> doShiftAndGo (myWorkspaces !! 1) | x <- term]
-   , [matchAny x --> doShiftAndGo (myWorkspaces !! 2) | x <- file]
-   , [matchAny x --> doShiftAndGo (myWorkspaces !! 3) | x <- doc]
-   , [matchAny x --> doShiftAndGo (myWorkspaces !! 4) | x <- misc]
-   , [matchAny x --> doShiftAndGo (myWorkspaces !! 5) | x <- irc]
-   , [matchAny x --> doShiftAndGo (myWorkspaces !! 7) | x <- tex]
-   , [matchAny x --> doShiftAndGo (myWorkspaces !! 6) | x <- kvm]
-   , [matchAny x --> doShiftAndGo (myWorkspaces !! 8) | x <- game]
+   , [matchAny x --> doShift (myWorkspaces !! 0) | x <- www]
+   , [matchAny x --> doShift (myWorkspaces !! 1) | x <- term]
+   , [matchAny x --> doShift (myWorkspaces !! 2) | x <- file]
+   , [matchAny x --> doShift (myWorkspaces !! 3) | x <- doc]
+   , [matchAny x --> doShift (myWorkspaces !! 4) | x <- misc]
+   , [matchAny x --> doShift (myWorkspaces !! 5) | x <- irc]
+   , [matchAny x --> doShift (myWorkspaces !! 7) | x <- tex]
+   , [matchAny x --> doShift (myWorkspaces !! 6) | x <- kvm]
+   , [matchAny x --> doShift (myWorkspaces !! 8) | x <- game]
 -- , [isDialog --> doCenterFloat]
    , [namedScratchpadManageHook myScratchPads]
    ]
@@ -59,13 +59,13 @@ myManageHook =
 
     q ~? x = fmap (x `isInfixOf`) q
 
-    doShiftAndGo = doF . liftM2 (.) W.greedyView W.shift
+    --doShiftAndGo = doF . liftM2 (.) W.greedyView W.shift
     unfloat = ask >>= doF . W.sink
 
     myBFloats = [ ]
     myMFloats = [ "nsxiv", "pavucontrol" ]
     mySFloats = [ "Virtual Machine Manager" ]
-    myInfixOf = [ "steam_app"]
+    myInfixOf = [ ]
     myFFloats = [ ]
     myTFloats = [ "Steam" ]
     myIgnores = [ "desktop_window", "kdesktop", "Picture in Picture", "Picture-in-Picture"]
@@ -78,7 +78,7 @@ myManageHook =
     tex       = [ ]
     kvm       = [ ]
     game      = [ "Steam", "VirtualBox", "Wine", "net-runelite-client-RuneLite", "net-runelite-client-Launcher", "m64py" ]
-    myFloats  = [ "pop-up", "floating", "dialog", "Places", "File Operation Progress", "Gcr-Prompter", "All Files", "xdg-desktop-portal-gnome", "menu", "center", "GtkFileChooserDialog", "_NET_WM_WINDOW_TYPE_SPLASH", "_OL_DECOR_CLOSE", "_NET_WM_WINDOW_TYPE_DIALOG", "org.gnome.DejaDup", "VirtualBox Machine", "VirtualBox Manager", "Zoom", "Virtual Machine Manager", "nsxiv", "sxiv", "megasync", "mpv", "m64py", "RuneLite Launcher", "Picture in Picture", "org.gnome.DejaDup", "page-info"]
+    myFloats  = [ "pop-up", "floating", "dialog", "Places", "File Operation Progress", "Gcr-Prompter", "All Files", "xdg-desktop-portal-gnome", "menu", "center", "GtkFileChooserDialog", "_NET_WM_WINDOW_TYPE_SPLASH", "_OL_DECOR_CLOSE", "_NET_WM_WINDOW_TYPE_DIALOG", "org.gnome.DejaDup", "VirtualBox Machine", "VirtualBox Manager", "Zoom", "Virtual Machine Manager", "nsxiv", "sxiv", "megasync", "mpv", "m64py", "RuneLite Launcher", "Picture in Picture", "org.gnome.DejaDup", "page-info", "Alpha", "Launcher" ]
 
 
 -- , [matchAny "no-focus" --> doF W.focusDown]

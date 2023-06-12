@@ -29,13 +29,13 @@ Config {
                                                         , "--normal"   , "darkorange"
                                                         , "--high"     , "red"
                                                         ] 50
-                                     , Run Memory ["-t", " mem: <used>M (<usedratio> %)"] 20
+                                  -- , Run Memory ["-t", " mem: <used>M (<usedratio> %)"] 20
                                      , Run Memory         [ "--template" ,"<fc=#666666><fn=5>|</fn></fc>mem: <used> MB (<usedratio> %)"
-                                                      --  , "--Low"      , "40"        -- units: %
-                                                      --  , "--High"     , "80"        -- units: %
-                                                      --  , "--Low"      , "100"
-                                                      --  , "--normal"   , "darkorange"
-                                                      --  , "--high"     , "red"
+                                                          , "--Low"      , "22000"     -- units: MB
+                                                          , "--High"     , "28000"     -- units: MB
+                                                          , "--low"      , "#51afef"
+                                                          , "--normal"   , "darkorange"
+                                                          , "--high"     , "red"
                                                           ] 10
                                      , Run DiskU [("/", "<fc=#666666><fn=5>|</fn></fc>ssd: <free>")] [] 60
                                      , Run Com "uname" ["-r"] "" 3600

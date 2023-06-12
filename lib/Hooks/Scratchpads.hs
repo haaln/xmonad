@@ -12,9 +12,9 @@ import Hooks.ForceFloat
 import Config
 
 myScratchPads :: [NamedScratchpad]
-myScratchPads = [ NS "terminal" (myTerminal <> " --class 'scratchpad'") (className =? "scratchpad") forceBigFloat
+myScratchPads = [ NS "terminal" (myTerminal <> " --class 'scratchpad' --title 'Scratchpad'") (className =? "scratchpad") forceBigFloat
                 , NS "tauonmb" "tauon" (className =? "Tauon Music Box") forceBigFloat
-                , NS "calculator" "qalculate-gtk" (className =? "Qalculate-gtk") forceMediumFloat
+                , NS "calculator" "qalculate-gtk" (className =? "Qalculate-gtk") forceCalcFloat
                 , NS "OBS" "obs" (className =? "obs") doFloat
                 , NS "ncmpcpp" (myTerminal <> " --class 'ncmpcpp' -e ncmpcpp")  (className =? "ncmpcpp") forceMediumFloat
                 , NS "newsboat" (myTerminal <> " --class 'newsboat' -e newsboat") (className =? "newsboat") forceMediumFloat

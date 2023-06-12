@@ -40,6 +40,8 @@ import Hooks.SearchEngine
 import Hooks.Scratchpads
 import Hooks.Prompt
 
+import XMonad.Hooks.UrgencyHook
+
 import Layout
 import Workspaces
 import Config
@@ -88,6 +90,8 @@ myKeys =
         , ("M-s b", namedScratchpadAction myScratchPads "newsboat")
         , ("M-s x", namedScratchpadAction myScratchPads "keepassxc")
 
+        , ("M-<Backspace>", focusUrgent)
+
         , ("M-S-c", kill1)                           
         , ("M-S-a", killAll)                         
         , ("M-C-<Right>", nextWS)
@@ -99,13 +103,14 @@ myKeys =
         , ("M1-1", windows $ W.greedyView $ myWorkspaces !! 0)
         , ("M1-2", windows $ W.greedyView $ myWorkspaces !! 1)
         , ("M1-3", windows $ W.greedyView $ myWorkspaces !! 2)
-        , ("M1-w w", windows $ W.greedyView $ myWorkspaces !! 0)
-        , ("M1-w f", windows $ W.greedyView $ myWorkspaces !! 2)
+      --, ("M1-w w", windows $ W.greedyView $ myWorkspaces !! 0)
+      --, ("M1-w f", windows $ W.greedyView $ myWorkspaces !! 2)
         , ("M1-w d", windows $ W.greedyView $ myWorkspaces !! 3)
         , ("M1-w a", windows $ W.greedyView $ myWorkspaces !! 4)
         , ("M1-w c", windows $ W.greedyView $ myWorkspaces !! 5)
         , ("M1-w t", windows $ W.greedyView $ myWorkspaces !! 6)
         , ("M1-w q", windows $ W.greedyView $ myWorkspaces !! 7)
+        , ("M1-w v", windows $ W.greedyView $ myWorkspaces !! 7)
         , ("M1-w x", windows $ W.greedyView $ myWorkspaces !! 8)
 
         , ("M-f", sendMessage (T.Toggle "floats"))       
@@ -126,7 +131,7 @@ myKeys =
         , ("M-k", windows W.focusUp)         
         , ("M-S-j", windows W.swapDown)      
         , ("M-S-k", windows W.swapUp)        
-        , ("M-<Backspace>", promote)         
+        , ("M-<Pageup>", promote)         
         , ("M1-S-<Tab>", rotSlavesDown)      
       --, ("M-S-m", windows W.swapMaster)    
       --, ("M1-C-<Tab>", rotAllDown)         

@@ -51,3 +51,15 @@ forceTinyFloat = doFloatDep move
     h = 0.4
     x = 0.75 -h
     y = 0.70 -w
+
+forceCalcFloat :: ManageHook
+forceCalcFloat = doFloatDep move
+  where
+    move :: W.RationalRect -> W.RationalRect
+    move _ = W.RationalRect x y w h
+
+    w, h, x, y :: Rational
+    w = 0.5
+    h = 0.6
+    x = 0.85 -h
+    y = 0.70 -w

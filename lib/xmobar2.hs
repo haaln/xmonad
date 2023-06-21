@@ -16,7 +16,7 @@ Config {
                                                           , "--High"     , "5000000"       -- units: B/s
                                                           , "--high"     , "red"
                                                           ] 10
-                                     , Run Cpu            [ "--template" , "cpu: <total> %"
+                                     , Run Cpu            [ "--template" , "cpu: <total> % <fc=#666666><fn=5>|</fn></fc>"
                                                           , "--Low"      , "50"         -- units: %
                                                           , "--High"     , "85"         -- units: %
                                                           , "--normal"   , "darkorange"
@@ -29,15 +29,15 @@ Config {
                                                         , "--normal"   , "darkorange"
                                                         , "--high"     , "red"
                                                         ] 50
-                                  -- , Run Memory ["-t", " mem: <used>M (<usedratio> %)"] 20
-                                     , Run Memory         [ "--template" ,"<fc=#666666><fn=5>|</fn></fc>mem: <used> MB (<usedratio> %)"
+                                     , Run Memory ["-t", "mem: <usedratio> %<fc=#666666><fn=5> |</fn></fc>"
+                                  -- , Run Memory         [ "--template" ,"<fc=#666666><fn=5>|</fn></fc>mem: <used> MB (<usedratio> %)"
                                                           , "--Low"      , "22000"     -- units: MB
                                                           , "--High"     , "28000"     -- units: MB
                                                           , "--low"      , "#51afef"
                                                           , "--normal"   , "darkorange"
                                                           , "--high"     , "red"
                                                           ] 10
-                                     , Run DiskU [("/", "<fc=#666666><fn=5>|</fn></fc>ssd: <free>")] [] 60
+                                     , Run DiskU [("/", "ssd: <free>")] [] 60
                                      , Run Com "uname" ["-r"] "" 3600
                                      , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
                                                         , ("us"         , "<fc=#8B0000>US</fc>")

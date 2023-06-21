@@ -21,7 +21,7 @@ myTerminal = "alacritty"
 myTerminalClass = "Alacritty" -- lazy fix for swallowing
 
 myBrowser :: String
-myBrowser = "chromium"
+myBrowser = "librefox"
 
 myEditor :: String
 myEditor = "vim"

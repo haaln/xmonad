@@ -125,14 +125,23 @@ myKeys =
         , ("C-g g", spawnGrid)
         , ("C-g t", goToGrid)
         , ("C-g b", goBringGrid)
+        
+        , ("<XF86AudioPrev>", spawn "mpc prev")
+        , ("<XF86AudioPlay>", spawn "mpc toggle")
+        , ("<XF86AudioNext>", spawn "mpc next")
+        , ("<XF86AudioMute>", spawn "mpc next")
+
+        , ("<XF86AudioRaiseVolume>", spawn "mpc volume +10")
+        , ("<XF86AudioLowerVolume>", spawn "mpc volume -10")
+
 
         , ("M-m", windows W.focusMaster)     
         , ("M-j", windows W.focusDown)       
         , ("M-k", windows W.focusUp)         
         , ("M-S-j", windows W.swapDown)      
         , ("M-S-k", windows W.swapUp)        
-        , ("M-<Pageup>", promote)         
-        , ("M1-S-<Tab>", rotSlavesDown)      
+      --, ("M-<Pageup>", promote)         
+      --, ("M1-S-<Tab>", rotSlavesDown)      
       --, ("M-S-m", windows W.swapMaster)    
       --, ("M1-C-<Tab>", rotAllDown)         
       --, ("M-S-s", windows copyToAll)

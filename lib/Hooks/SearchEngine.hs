@@ -21,5 +21,4 @@ searchList = [ ("a", archwiki)
              , ("s", S.stackage)
              , ("w", S.wikipedia)
              , ("g", S.github)
-             , ("t", S.alpha)
              ]

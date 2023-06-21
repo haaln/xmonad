@@ -14,6 +14,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.EwmhDesktops 
 
 import Hooks.Swallow
+import XMonad.Hooks.UrgencyHook
 import Config
 
 -- for reference, the following line is the same as dynamicTitle myDynHook
@@ -28,7 +29,6 @@ myEventHook = serverModeEventHookCmd
                                <+> serverModeEventHook
                                <+> serverModeEventHookF "XMONAD_PRINT" (io . putStrLn)
                                <+> handleEventHook def
---                               <+> XMonad.Hooks.EwmhDesktops.fullscreenEventHook
 --                               <+> XMonad.Layout.Fullscreen.fullscreenEventHook
                                <+> swallowHook
 

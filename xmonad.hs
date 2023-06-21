@@ -16,45 +16,12 @@ import Keybinds
 import Event
 import Log
 
-import XMonad.Hooks.UrgencyHook
-import qualified XMonad.StackSet as W
-import XMonad.Util.NamedWindows
-
-data LibNotifyUrgencyHook =
-  LibNotifyUrgencyHook
-  deriving (Read,Show)
-instance UrgencyHook LibNotifyUrgencyHook where
-  urgencyHook LibNotifyUrgencyHook w =
-    do name <- getName w
-       wins <- gets windowset
-       whenJust (W.findTag w wins)
-                (flash name)
-    where flash name index = spawn $
-                             "notify-send " ++
-                             "'Workspace " ++
-                             index ++
-                             "' " ++ "'Activity in: " ++ show name ++ "' "
--- alternative 
---
--- data LibNotifyUrgencyHook = LibNotifyUrgencyHook deriving (Read, Show)
--- instance UrgencyHook LibNotifyUrgencyHook where
---     urgencyHook LibNotifyUrgencyHook w = do
---         name     <- getName w
---         Just idx <- fmap (W.findTag w) $ gets windowset
--- 
---         safeSpawn "notify-send" [show name, "workspace " ++ idx]
-
-myUrgencyHook =
-  withUrgencyHook LibNotifyUrgencyHook
-
 main :: IO ()
-
-
 main = do
     xmproc0 <- spawnPipe "xmobar $HOME/.config/xmonad/lib/xmobar1.hs"
     xmproc1 <- spawnPipe "xmobar $HOME/.config/xmonad/lib/xmobar2.hs"
 
-    xmonad $ ewmh $ ewmhFullscreen $ docks $ myUrgencyHook $ def
+    xmonad $ ewmh $ ewmhFullscreen $ docks $ def
      { manageHook         = myManageHook
      , handleEventHook    = myEventHook
      , modMask            = myModMask

@@ -7,7 +7,7 @@ import XMonad.Hooks.SetWMName
 
 myStartupHook :: X ()
 myStartupHook = do
-          spawnOnce "conky &"
+--        spawnOnce "conky &"
           spawnOnce "$HOME/.config/layout.sh &"
           spawnOnce "picom --config $HOME/.config/picom/picom.conf &"
 --        spawnOnce "imwheel &"

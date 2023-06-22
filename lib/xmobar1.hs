@@ -37,7 +37,7 @@ Config {
                                                           , "--normal"   , "darkorange"
                                                           , "--high"     , "red"
                                                           ] 10
-                                     , Run DiskU [("/", "ssd: <free>")] [] 60
+                                     , Run DiskU [("/", "ssd: <free>B")] [] 60
                                      , Run Com "uname" ["-r"] "" 3600
                                      , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
                                                         , ("us"         , "<fc=#8B0000>US</fc>")

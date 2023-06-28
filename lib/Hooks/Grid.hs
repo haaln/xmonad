@@ -49,6 +49,7 @@ myAppGrid = [
              , ("Visual Studio Code", spawn "code")
              , ("KeePassXC", spawn "keepassxc")
              , ("Kate Text Editor", spawn "kate")
+             , ("Kate Text Editor", spawn "kate")
              , ("Newsboat RSS", spawn (myTerminal <> " --class 'newsboat' -e newsboat"))
              , ("Remmina", spawn "remmina")
              , ("Deja-Dup Backup", spawn "deja-dup")

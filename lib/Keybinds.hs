@@ -128,6 +128,7 @@ myKeys =
         , ("<XF86AudioPrev>", spawn "mpc prev")
         , ("<XF86AudioPlay>", spawn "mpc toggle")
         , ("<XF86AudioNext>", spawn "mpc next")
+        , ("<Print>", spawn "scrot -u -e 'mv $f ~/pictures/scrot/'")
 
         , ("<XF86AudioRaiseVolume>", spawn "mpc volume +10")
         , ("<XF86AudioLowerVolume>", spawn "mpc volume -10")

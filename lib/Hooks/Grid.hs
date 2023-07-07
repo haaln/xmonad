@@ -59,7 +59,8 @@ myAppGrid = [
              , ("Thunar", spawn "thunar")
              , ("Doplhin Emulator", spawn "dolphin-emu")
              , ("Firefox", spawn "firefox")
---             , ("Claws Mail", spawn "claws-mail --alternate-config-dir "$XDG_DATA_HOME"/claws-mail")
-             , ("qBittorent", spawn "qbittorrent")
+             , ("Claws Mail", spawn "claws-mail --alternate-config-dir $XDG_CONFIG_HOME/claws-mail")
              , ("Manga Reader", spawn "mangareader")
+             , ("qBittorent", spawn "qbittorrent")
+             , ("Blender", spawn "blender")
              ]

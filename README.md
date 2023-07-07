@@ -1,6 +1,8 @@
 # xmonad + xmobar # 
 
-![alt text](https://github.com/haaln/xmonad/blob/master/1.jpg?raw=true)
+<p align="center">
+  <img src="./screenshot/1.png" width="350" title="a minimal dual monitor setup">
+</p>
 
 ` git clone https://github.com/haaln/xmonad.git`
 

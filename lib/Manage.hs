@@ -25,6 +25,15 @@ myManageHook =
  where
   manageRules = composeAll . concat $
    [ [transience']
+   , [isDialog --> doCenterFloat]
+   , [isFullscreen --> doFullFloat]
+   , [matchAny x <&&> title /=? x --> doFloat    | x <- myTFloats]
+   , [matchAny x --> forceBigFloat               | x <- myBFloats]
+   , [matchAny x --> forceMediumFloat            | x <- myMFloats]
+   , [matchAny x --> forceSmallFloat             | x <- mySFloats]
+   , [matchAny x --> doFloat                     | x <- myFloats]
+   , [matchAny x --> doFloat                     | x <- myInfixOf]
+   , [matchAny x --> doIgnore                    | x <- myIgnores]
    , [matchAny x --> doShift (myWorkspaces !! 0) | x <- www]
    , [matchAny x --> doShift (myWorkspaces !! 1) | x <- term]
    , [matchAny x --> doShift (myWorkspaces !! 2) | x <- file]
@@ -34,16 +43,7 @@ myManageHook =
    , [matchAny x --> doShift (myWorkspaces !! 7) | x <- tex]
    , [matchAny x --> doShift (myWorkspaces !! 6) | x <- kvm]
    , [matchAny x --> doShift (myWorkspaces !! 8) | x <- game]
-   , [matchAny x <&&> title /=? x --> doFloat    | x <- myTFloats]
-   , [matchAny x --> forceBigFloat               | x <- myBFloats]
-   , [matchAny x --> forceMediumFloat            | x <- myMFloats]
-   , [matchAny x --> forceSmallFloat             | x <- mySFloats]
-   , [matchAny x --> doFloat                     | x <- myFloats]
-   , [matchAny x --> doFloat                     | x <- myInfixOf]
-   , [matchAny x --> doIgnore                    | x <- myIgnores]
    , [namedScratchpadManageHook myScratchPads]
-   , [isFullscreen --> doFullFloat]
-   , [isDialog --> doCenterFloat]
    ]
    where
     matchAny :: String -> Query Bool
@@ -61,7 +61,7 @@ myManageHook =
     --doShiftAndGo = doF . liftM2 (.) W.greedyView W.shift
     unfloat = ask >>= doF . W.sink
 
-    myBFloats = [ ]
+    myBFloats = [ "eog" ]
     myMFloats = [ "nsxiv", "pavucontrol" ]
     mySFloats = [ "Virtual Machine Manager" ]
     myInfixOf = [ "Edge Webview2" ]
@@ -82,3 +82,4 @@ myManageHook =
 
 -- , [matchAny "no-focus" --> doF W.focusDown]
 -- , [matchAny "floating" --> doCenterFloat <+> doF W.focusDown]
+

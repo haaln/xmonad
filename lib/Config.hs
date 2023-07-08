@@ -18,7 +18,7 @@ myModMask = mod4Mask
 
 myTerminal :: String
 myTerminal = "alacritty" 
-myTerminalClass = "Alacritty" -- lazy fix for swallowing
+myTerminalClass = "Alacritty"
 
 myBrowser :: String
 myBrowser = "librefox"

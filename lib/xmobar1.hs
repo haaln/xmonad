@@ -1,6 +1,8 @@
 Config {         
                  font              = "VictorMono Nerd Font Bold 11"
-                 , additionalFonts = ["VictorMono Nerd Font Bold 15"]
+                 , additionalFonts = ["VictorMono Nerd Font Bold 15"
+                                     , "JetBrains Mono Nerd Font 11"
+                                     , "Iosevka 11" ]
                  , bgColor         = "#282c34"
                  , fgColor         = "#51afef" 
                  , position        = Static { xpos = 0 , ypos = 0, width = 1920, height = 19 }

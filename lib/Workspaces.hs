@@ -3,12 +3,12 @@ module Workspaces where
 import XMonad
 
 www = "\63206"
-term = "\61728"
+term = "\xf120"
 file = "\61564"
-doc = "\63277"
-misc = "\63256"
-irc= "\63111"
-tex = "\61489"
+dev = "\xf15c"
+misc = "\xf2d2"
+win = "\61818"
+tex = "\xf02d"
 kvm = "\62599"
 game = "\63381"
 -- windows logo "\61818"
@@ -24,7 +24,7 @@ xmobarEscape = concatMap doubleLts
 
 myWorkspaces :: [String]
 myWorkspaces = clickable . map xmobarEscape
-              $ [www, term, file, doc, misc, irc, tex, kvm, game]
+              $ [www, term, file, dev, misc, tex, win, kvm, game]
   where
         clickable l = [ "<action=xdotool key super+" ++ show n ++ ">" ++ ws ++ " </action>" |
                       (i,ws) <- zip [1..9] l,

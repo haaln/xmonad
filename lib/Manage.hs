@@ -37,9 +37,9 @@ myManageHook =
    , [matchAny x --> doShift (myWorkspaces !! 0) | x <- www]
    , [matchAny x --> doShift (myWorkspaces !! 1) | x <- term]
    , [matchAny x --> doShift (myWorkspaces !! 2) | x <- file]
-   , [matchAny x --> doShift (myWorkspaces !! 3) | x <- doc]
+   , [matchAny x --> doShift (myWorkspaces !! 3) | x <- dev]
    , [matchAny x --> doShift (myWorkspaces !! 4) | x <- misc]
-   , [matchAny x --> doShift (myWorkspaces !! 5) | x <- irc]
+   , [matchAny x --> doShift (myWorkspaces !! 5) | x <- win]
    , [matchAny x --> doShift (myWorkspaces !! 7) | x <- tex]
    , [matchAny x --> doShift (myWorkspaces !! 6) | x <- kvm]
    , [matchAny x --> doShift (myWorkspaces !! 8) | x <- game]
@@ -61,7 +61,7 @@ myManageHook =
     --doShiftAndGo = doF . liftM2 (.) W.greedyView W.shift
     unfloat = ask >>= doF . W.sink
 
-    myBFloats = [ "eog" ]
+    myBFloats = [ "eog"]
     myMFloats = [ "nsxiv", "pavucontrol" ]
     mySFloats = [ "Virtual Machine Manager" ]
     myInfixOf = [ "Edge Webview2" ]
@@ -71,9 +71,9 @@ myManageHook =
     www       = [ "Brave-browser", "Chromium", "qutebrowser", "chromium-browser", "firefox", "LibreWolf" ]
     term      = [ ]
     file      = [ "Thunar","Org.gnome.Nautilus","PCManFM","Ranger","lf"]
-    doc       = [ "Code","Emacs","org.remmina.Remmina", "jetbrains-idea-ce" ]
+    dev       = [ "Code","Emacs","org.remmina.Remmina", "jetbrains-idea-ce" ]
     misc      = [ "megasync", "qBittorrent","transmission"]
-    irc       = [ "thunderbird"]
+    win       = [ ]
     tex       = [ ]
     kvm       = [ ]
     game      = [ "Steam", "VirtualBox", "Wine", "net-runelite-client-RuneLite", "net-runelite-client-Launcher", "m64py" ]

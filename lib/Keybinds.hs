@@ -64,8 +64,8 @@ promptList' = [ ("c", calcPrompt, "qalc")
 myKeys :: [(String, X ())]
 myKeys =
         -- temp
-        [ ("M-C-[", spawn "nitrogen --random --set-zoom-fill --head=0 &")
-        , ("M-C-]", spawn "nitrogen --random --set-zoom-fill --head=1 &")
+        [ ("M-C-[", spawn "nitrogen --random --set-zoom --head=0 &")
+        , ("M-C-]", spawn "nitrogen --random --set-zoom --head=1 &")
         , ("M-C-m", swallowToggle ) 
 
         , ("M-C-r", spawn "xmonad --recompile")      
@@ -116,10 +116,10 @@ myKeys =
         , ("M-<Delete>", withFocused $ windows . W.sink) 
         , ("M-<XF86WheelButton>", withFocused $ windows . W.sink) 
         , ("M-S-<Delete>", sinkAll)                     
-        , ("M-C-h", withFocused (keysMoveWindow (-200,0)))
-        , ("M-C-l", withFocused (keysMoveWindow (200,0)))
-        , ("M-C-j", withFocused (keysMoveWindow (0,200)))
-        , ("M-C-k", withFocused (keysMoveWindow (0,-200)))
+      --, ("M-C-h", withFocused (keysMoveWindow (-200,0)))
+      --, ("M-C-l", withFocused (keysMoveWindow (200,0)))
+      --, ("M-C-j", withFocused (keysMoveWindow (0,200)))
+      --, ("M-C-k", withFocused (keysMoveWindow (0,-200)))
 
         , ("C-g g", spawnGrid)
         , ("C-g t", goToGrid)

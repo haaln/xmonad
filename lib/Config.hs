@@ -6,15 +6,12 @@ import XMonad.Prompt.FuzzyMatch
 import XMonad.Layout.Tabbed
 import XMonad.Hooks.DynamicLog
 
-
 import Colors.Winter
 
 myFont :: String
-myFont = "xft:JetBrains Mono:size=14:antialias=true:hinting=true"
-myTabFont = "xft:JetBrains Mono:size=12:antialias=true:hinting=true"
-
-myModMask :: KeyMask
-myModMask = mod4Mask       
+myFont = "xft:JetBrainsMono NF:size=14:antialias=true:hinting=true"
+myTabFont :: String
+myTabFont = "xft:JetBrainsMono NF :size=12:antialias=true:hinting=true"
 
 myTerminal :: String
 myTerminal = "alacritty" 
@@ -38,8 +35,11 @@ myNormColor   = colorBack
 myFocusColor :: String
 myFocusColor  = color08
 
+myModMask :: KeyMask
+myModMask = mod4Mask
+
 altMask :: KeyMask
-altMask = mod1Mask         
+altMask = mod1Mask
 
 dtXPConfig :: XPConfig
 dtXPConfig = def
@@ -59,7 +59,7 @@ dtXPConfig = def
       , showCompletionOnTab = False
       , searchPredicate     = fuzzyMatch
       , alwaysHighlight     = True
-      , maxComplRows        = Nothing      
+      , maxComplRows        = Nothing
       }
 
 dtXPConfig' :: XPConfig

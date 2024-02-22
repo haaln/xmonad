@@ -11,6 +11,8 @@ win = "\61818"
 tex = "\xf02d"
 kvm = "\62599"
 game = "\63381"
+
+myWorkspace = [www, term, file, dev, misc, tex, win, kvm, game]
 -- windows logo "\61818"
 -- mail logo "\64239" or "\63213"
 -- git arrow "\61556" or branch "\62488"
@@ -24,7 +26,7 @@ xmobarEscape = concatMap doubleLts
 
 myWorkspaces :: [String]
 myWorkspaces = clickable . map xmobarEscape
-              $ [www, term, file, dev, misc, tex, win, kvm, game]
+              $ myWorkspace
   where
         clickable l = [ "<action=xdotool key super+" ++ show n ++ ">" ++ ws ++ " </action>" |
                       (i,ws) <- zip [1..9] l,

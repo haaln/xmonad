@@ -81,7 +81,7 @@ myXmobarPP =  def
           , ppVisible = xmobarColor color03 ""
           , ppHidden = xmobarColor color07 "" . wrap "" ""
           , ppHiddenNoWindows = xmobarColor color13 ""
-          , ppTitle = xmobarColor colorFore "" . shorten 90
+          , ppTitle = xmobarColor colorFore "" . shorten 60
           , ppSep = "<fc=#666666> <fn=2>|</fn> </fc>"
           , ppUrgent = xmobarColor color10 "" . wrap "!" "!"  
           , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]

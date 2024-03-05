@@ -15,6 +15,7 @@ import qualified Codec.Binary.UTF8.String as UTF8
 myLogHook :: X ()
 myLogHook = 
      workspaceHistoryHook
+ -- <+> resoSwitch
  <+> fadeInactiveLogHook fadeAmount
       where
        fadeAmount = 1.0

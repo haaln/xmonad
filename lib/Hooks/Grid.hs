@@ -11,13 +11,6 @@ import Colors.Winter
 
 import Hooks.Scratchpads
 
-myColorizer = anyColor color07
-   where
-    anyColor color _ isFg = do
-    return $ if isFg
-             then (color,color01)
-             else (colorBack,color16)
-
 myGridConfig x = (buildDefaultGSConfig myColorizer)
     { gs_cellheight   = 40
     , gs_cellwidth    = 200
@@ -63,3 +56,10 @@ myAppGrid = [
              , ("Claws Mail", spawn "claws-mail --alternate-config-dir $XDG_CONFIG_HOME/claws-mail")
              , ("RuneLite", spawn "runelite")
              ]
+
+myColorizer = anyColor color07
+  where
+        anyColor color _ isFg = do
+              return $ if isFg
+              then (color,color01)
+              else (colorBack,color16)

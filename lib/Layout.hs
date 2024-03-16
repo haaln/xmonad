@@ -31,6 +31,9 @@ import XMonad.Layout.Tabbed
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.IM
 
+import qualified XMonad.StackSet as W
+import Workspaces
+
 import Config
 
 myLayoutHook = avoidStruts 
@@ -39,9 +42,9 @@ myLayoutHook = avoidStruts
              $ windowArrange 
              $ T.toggleLayouts floats 
              $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout 
-               
+
              where
-               myDefaultLayout =         
+               myDefaultLayout =
                                         tall
                                     ||| noBorders tabs
                                  -- ||| spirals
@@ -101,5 +104,3 @@ threeRow = renamed [Replace "threeRow"]
            $ mySpacing mySpacingWidth
            $ Mirror
            $ ThreeCol 1 (3/100) (1/2)
-
-

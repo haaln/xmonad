@@ -15,7 +15,7 @@ import qualified Codec.Binary.UTF8.String as UTF8
 myLogHook :: X ()
 myLogHook = 
      workspaceHistoryHook
- -- <+> resoSwitch
+ -- <+> switchRes
  <+> fadeInactiveLogHook fadeAmount
       where
        fadeAmount = 1.0
@@ -31,8 +31,8 @@ dbusOutput dbus str = do
     interfaceName = D.interfaceName_ "org.xmonad.Log"
     memberName = D.memberName_ "Update"
 
-resoSwitch :: X ()
-resoSwitch = do
+switchRes:: X ()
+switchRes = do
   ws <- gets windowset
   let tag = W.tag . W.workspace . W.current $ ws
   spawn ("~/.local/bin/myXrandrScript.sh " ++ show tag )

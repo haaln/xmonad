@@ -19,4 +19,5 @@ myScratchPads = [ NS "terminal" (myTerminal <> " --class 'scratchpad' --title 'S
                 , NS "newsboat" (myTerminal <> " --class 'newsboat' -e newsboat") (className =? "newsboat") forceMediumFloat
                 , NS "keepassxc" "keepassxc" (className =? "KeePassXC") forceBigFloat
                 , NS "thunderbird" "thunderbird" (className =? "thunderbird") forceBigFloat
+                , NS "pavucontrol" "pavucontrol" (className =? "pavucontrol") forceMediumFloat
                 ]

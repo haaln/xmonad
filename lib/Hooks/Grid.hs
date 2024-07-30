@@ -25,7 +25,8 @@ goBringGrid = bringSelected (myGridConfig myAppGrid)
 spawnGrid = runSelectedAction (myGridConfig myAppGrid) myAppGrid
 
 myAppGrid = [
-               ("Ungoogled Chromium", spawn "chromium")
+            ("Ungoogled Chromium", spawn "chromium")
+            -- ("Firefox", spawn "firefox")
 --           , ("Librewolf", spawn "librewolf")
              , ("Emacs", spawn "emacsclient -c -a emacs")
              , ("Steam", spawn "steam")

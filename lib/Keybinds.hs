@@ -92,7 +92,7 @@ myKeys =
         , ("M-s x", namedScratchpadAction myScratchPads "keepassxc")
         , ("M-s t", namedScratchpadAction myScratchPads "thunderbird")
 
-        , ("M-<Backspace>", focusUrgent)
+        -- , ("M-<Backspace>", focusUrgent)
 
         , ("M-S-c", kill1)                           
         , ("M-S-a", killAll)                         
@@ -141,7 +141,7 @@ myKeys =
         , ("M-k", windows W.focusUp)         
         , ("M-S-j", windows W.swapDown)      
         , ("M-S-k", windows W.swapUp)        
-      --, ("M-<Pageup>", promote)         
+        , ("M-<Backspace>", promote)
       --, ("M1-S-<Tab>", rotSlavesDown)      
       --, ("M-S-m", windows W.swapMaster)    
       --, ("M1-C-<Tab>", rotAllDown)         

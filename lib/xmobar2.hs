@@ -44,5 +44,5 @@ Config
   ]
   , sepChar = "%"
   , alignSep = "}{"
-  , template = " %UnsafeStdinReader% }{%mpd% %cpu% %memory% %disku% %eth0% %date%"
+  , template = " %UnsafeStdinReader% }{ %cpu% %memory% %disku% %eth0% %date%"
 }

@@ -66,7 +66,7 @@ myManageHook =
     mySFloats = [ "Virtual Machine Manager" ]
     myInfixOf = [ "Edge Webview2", "wine", "Wine" ]
     myTFloats = [ "Steam"]
-    myIgnores = [ "conky", "desktop_window", "kdesktop", "Picture in Picture", "Picture-in-Picture" ]
+    myIgnores = [ "conky", "desktop_window", "kdesktop", "Picture in Picture", "Picture-in-Picture"]
     www       = [ "Brave-browser", "Chromium", "qutebrowser", "chromium-browser", "firefox", "LibreWolf" ]
     term      = [ ]
     file      = [ "Thunar","Org.gnome.Nautilus","PCManFM","Ranger","lf"]
@@ -76,7 +76,7 @@ myManageHook =
     tex       = [ ]
     kvm       = [ ]
     game      = [ "Steam", "VirtualBox", "Wine", "net-runelite-client-RuneLite", "net-runelite-client-Launcher", "m64py" ]
-    myFloats  = [ "pop-up", "floating", "dialog", "Places", "File Operation Progress", "Gcr-Prompter", "All Files", "xdg-desktop-portal-gnome", "menu", "center", "GtkFileChooserDialog", "_NET_WM_WINDOW_TYPE_SPLASH", "_OL_DECOR_CLOSE", "_NET_WM_WINDOW_TYPE_DIALOG", "VirtualBox Machine", "VirtualBox Manager", "Zoom", "Virtual Machine Manager", "nsxiv", "sxiv", "megasync", "mpv", "m64py", "RuneLite Launcher", "Picture in Picture", "org.gnome.DejaDup", "page-info", "Alpha", "Launcher" ]
+    myFloats  = [ "pop-up", "floating", "dialog", "Places", "File Operation Progress", "Gcr-Prompter", "All Files", "xdg-desktop-portal-gnome", "menu", "center", "GtkFileChooserDialog", "_NET_WM_WINDOW_TYPE_SPLASH", "_OL_DECOR_CLOSE", "_NET_WM_WINDOW_TYPE_DIALOG", "VirtualBox Machine", "VirtualBox Manager", "Zoom", "Virtual Machine Manager", "nsxiv", "sxiv", "megasync", "mpv", "m64py", "RuneLite Launcher", "Picture in Picture", "org.gnome.DejaDup", "page-info"]
 
 
 -- , [matchAny "no-focus" --> doF W.focusDown]

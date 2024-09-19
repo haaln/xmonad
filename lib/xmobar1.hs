@@ -1,4 +1,4 @@
-Config 
+Config
 {
   font              = "VictorMono Nerd Font Bold 11"
   , additionalFonts = ["VictorMono Nerd Font Bold 15"]
@@ -37,9 +37,6 @@ Config
     , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
                          , ("us"         , "<fc=#8B0000>US</fc>")
                          ]
-    , Run MPD            ["-t"
-                         , "<statei>"
-                         , "--", "-P", "<fc=#666666><fn=5>| </fn></fc>\xf04b<fc=#666666><fn=5> |</fn></fc>", "-Z", "", "-S", ""] 10
     , Run UnsafeStdinReader
     ]
     , sepChar = "%"

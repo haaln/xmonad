@@ -30,7 +30,7 @@ myEventHook = serverModeEventHookCmd
                                <+> serverModeEventHookF "XMONAD_PRINT" (io . putStrLn)
                                <+> handleEventHook def
 --                               <+> XMonad.Layout.Fullscreen.fullscreenEventHook
-                               <+> swallowHook
+                               -- <+> swallowHook
 
 -- Transform layout modifier into a toggle-able
 enableTabs x = addTabs shrinkText myTabTheme $ subLayout [] Simplest x

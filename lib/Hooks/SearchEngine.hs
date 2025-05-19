@@ -18,7 +18,6 @@ searchList = [ ("a", archwiki)
              , ("r", aur)
              , ("d", S.duckduckgo)
              , ("i", S.images)
-             , ("s", S.stackage)
              , ("w", S.wikipedia)
              , ("g", S.github)
              ]

@@ -18,8 +18,7 @@ import Log
 
 main :: IO ()
 main = do
-    xmproc0 <- spawnPipe "xmobar $HOME/.config/xmonad/lib/xmobar1.hs"
-    xmproc1 <- spawnPipe "xmobar $HOME/.config/xmonad/lib/xmobar2.hs"
+    xmproc0 <- spawnPipe "xmobar $HOME/.config/xmonad/lib/xmobar.hs"
 
     xmonad $ ewmh $ ewmhFullscreen $ docks $ def
      { manageHook         = myManageHook
@@ -33,5 +32,5 @@ main = do
      , normalBorderColor  = myNormColor
      , focusedBorderColor = myFocusColor
      , logHook            = myLogHook <+> dynamicLogWithPP myXmobarPP
-     { ppOutput = \x -> hPutStrLn xmproc0 x  >> hPutStrLn xmproc1 x }
+     { ppOutput = \x -> hPutStrLn xmproc0 x }
      } `additionalKeysP` myKeys

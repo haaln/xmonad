@@ -25,7 +25,7 @@ goBringGrid = bringSelected (myGridConfig myAppGrid)
 spawnGrid = runSelectedAction (myGridConfig myAppGrid) myAppGrid
 
 myAppGrid = [
-               ("Ungoogled Chromium", spawn "chromium")
+               ("Firefox", spawn "firefox")
              , ("Thunar", spawn "thunar")
              , ("Steam", spawn "steam")
              , ("VS Codium", spawn "vscodium")

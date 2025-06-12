@@ -26,10 +26,10 @@ spawnGrid = runSelectedAction (myGridConfig myAppGrid) myAppGrid
 
 myAppGrid = [
                ("Ungoogled Chromium", spawn "chromium")
-             , ("Emacs", spawn "emacsclient -c -a emacs")
+             , ("Thunar", spawn "thunar")
              , ("Steam", spawn "steam")
-             , ("Ranger", spawn (myTerminal <> " -e ranger"))
              , ("VS Codium", spawn "vscodium")
+             , ("Ranger", spawn (myTerminal <> " -e ranger"))
              , ("LibreOffice Writer", spawn "lowriter")
              , ("Virt Manager", spawn "virt-manager")
              , ("IntelliJ IDEA", spawn "idea")
@@ -37,7 +37,7 @@ myAppGrid = [
              , ("PavuControl Volume", spawn "pavucontrol")
              , ("Newsboat RSS", spawn (myTerminal <> " --class 'newsboat' -e newsboat"))
              , ("Deja-Dup Backup", spawn "deja-dup")
-             , ("Thunar", spawn "thunar")
+             , ("Emacs", spawn "emacsclient -c -a emacs")
              ]
 
 myColorizer = anyColor color07

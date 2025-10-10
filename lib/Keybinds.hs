@@ -14,11 +14,11 @@ import XMonad.Prompt.Man
 import XMonad.Prompt.Input
 import Control.Arrow
 import qualified XMonad.Actions.Search as S
-import qualified XMonad.Layout.ToggleLayouts as T 
-import XMonad.Layout.MultiToggle.Instances 
-import qualified XMonad.Layout.MultiToggle as MT 
+import qualified XMonad.Layout.ToggleLayouts as T
+import XMonad.Layout.MultiToggle.Instances
+import qualified XMonad.Layout.MultiToggle as MT
 import System.Exit (exitSuccess)
-import XMonad.Prompt.Shell 
+import XMonad.Prompt.Shell
 import XMonad.Hooks.ManageHelpers
 import XMonad.Actions.CycleWS
 import XMonad.Actions.SinkAll
@@ -49,18 +49,18 @@ import Workspaces
 import Config
 
 promptList :: [(String, XPConfig -> X ())]
-promptList = [ ("m", manPrompt)          
-             , ("p", passPrompt)        
+promptList = [ ("m", manPrompt)
+             , ("p", passPrompt)
              , ("g", passGeneratePrompt)
-             , ("r", passRemovePrompt)  
-             , ("s", sshPrompt)          
-             , ("x", xmonadPrompt)       
+             , ("r", passRemovePrompt)
+             , ("s", sshPrompt)
+             , ("x", xmonadPrompt)
              ]
 
 promptList' :: [(String, XPConfig -> String -> X (), String)]
-promptList' = [ ("c", calcPrompt, "qalc")         
+promptList' = [ ("c", calcPrompt, "qalc")
               ]
-     
+
 
 
 myKeys :: [(String, X ())]
@@ -68,13 +68,13 @@ myKeys =
         -- temp
         [ ("M-C-[", spawn "nitrogen --random --set-zoom --head=0 &")
         , ("M-C-]", spawn "nitrogen --random --set-zoom --head=1 &")
-        , ("M-C-m", swallowToggle ) 
+        , ("M-C-m", swallowToggle )
 
-        , ("M-C-r", spawn "xmonad --recompile")      
-        , ("M-S-r", spawn "xmonad --restart")        
-        , ("M-S-q q", io exitSuccess)                
-        , ("M-S-q r", spawn "reboot")                  
-        , ("M-S-q s", spawn "poweroff")                  
+        , ("M-C-r", spawn "xmonad --recompile")
+        , ("M-S-r", spawn "xmonad --restart")
+        , ("M-S-q q", io exitSuccess)
+        , ("M-S-q r", spawn "reboot")
+        , ("M-S-q s", spawn "poweroff")
 
         , ("M-<Return>", spawn myTerminal)
 
@@ -83,7 +83,7 @@ myKeys =
         , ("S-M1-f", spawn "thunar")
 
         , ("M-d", shellPrompt myXPConfig)
-        
+
         , ("M1-<Space>", namedScratchpadAction myScratchPads "terminal")
         , ("M-s c", namedScratchpadAction myScratchPads "calculator")
         , ("M-s o", namedScratchpadAction myScratchPads "OBS")
@@ -94,14 +94,14 @@ myKeys =
 
         -- , ("M-<Backspace>", focusUrgent)
 
-        , ("M-S-c", kill1)                           
-        , ("M-S-a", killAll)                         
+        , ("M-S-c", kill1)
+        , ("M-S-a", killAll)
         , ("M-C-<Right>", nextWS)
         , ("M-C-<Left>", prevWS)
 
         , ("M1-<Tab>", toggleWS' ["NSP"])
         , ("M1-C-<Tab>", moveTo Prev nonEmptyNonNSP)
-        
+
         , ("M1-1", windows $ W.greedyView $ myWorkspaces !! 0)
         , ("M1-2", windows $ W.greedyView $ myWorkspaces !! 1)
         , ("M1-3", windows $ W.greedyView $ myWorkspaces !! 2)
@@ -114,19 +114,19 @@ myKeys =
         , ("M1-w v", windows $ W.greedyView $ myWorkspaces !! 7)
         , ("M1-w x", windows $ W.greedyView $ myWorkspaces !! 8)
 
-        , ("M-f", sendMessage (T.Toggle "floats"))       
-        , ("M-<Delete>", withFocused $ windows . W.sink) 
-        , ("M-<XF86WheelButton>", withFocused $ windows . W.sink) 
-        , ("M-S-<Delete>", sinkAll)                     
-      --, ("M-C-h", withFocused (keysMoveWindow (-200,0)))
-      --, ("M-C-l", withFocused (keysMoveWindow (200,0)))
-      --, ("M-C-j", withFocused (keysMoveWindow (0,200)))
-      --, ("M-C-k", withFocused (keysMoveWindow (0,-200)))
+        , ("M-f", sendMessage (T.Toggle "floats"))
+        , ("M-<Delete>", withFocused $ windows . W.sink)
+        , ("M-<XF86WheelButton>", withFocused $ windows . W.sink)
+        , ("M-S-<Delete>", sinkAll)
+        , ("M-C-<KP_Left>", withFocused (keysMoveWindow (-200,0)))
+        , ("M-C-<KP_Right>", withFocused (keysMoveWindow (200,0)))
+        , ("M-C-<KP_Down>", withFocused (keysMoveWindow (0,200)))
+        , ("M-C-<KP_Up>", withFocused (keysMoveWindow (0,-200)))
 
         , ("C-g g", spawnGrid)
         , ("C-g t", goToGrid)
         , ("C-g b", goBringGrid)
-        
+
         , ("<XF86AudioPrev>", spawn "mpc prev")
         , ("<XF86AudioPlay>", spawn "mpc toggle")
         , ("<XF86AudioNext>", spawn "mpc next")
@@ -136,28 +136,28 @@ myKeys =
         , ("<XF86AudioLowerVolume>", spawn "mpc volume -10")
 
 
-        , ("M-m", windows W.focusMaster)     
-        , ("M-j", windows W.focusDown)       
-        , ("M-k", windows W.focusUp)         
-        , ("M-S-j", windows W.swapDown)      
-        , ("M-S-k", windows W.swapUp)        
+        , ("M-m", windows W.focusMaster)
+        , ("M-j", windows W.focusDown)
+        , ("M-k", windows W.focusUp)
+        , ("M-S-j", windows W.swapDown)
+        , ("M-S-k", windows W.swapUp)
         , ("M-<Backspace>", promote)
-      --, ("M1-S-<Tab>", rotSlavesDown)      
-      --, ("M-S-m", windows W.swapMaster)    
-      --, ("M1-C-<Tab>", rotAllDown)         
+      --, ("M1-S-<Tab>", rotSlavesDown)
+      --, ("M-S-m", windows W.swapMaster)
+      --, ("M1-C-<Tab>", rotAllDown)
       --, ("M-S-s", windows copyToAll)
         , ("M-C-s", killAllOtherCopies)
 
-        , ("M-<Tab>", sendMessage NextLayout)               
+        , ("M-<Tab>", sendMessage NextLayout)
         , ("M-C-M1-<Up>", sendMessage Arrange)
         , ("M-C-M1-<Down>", sendMessage DeArrange)
-        , ("M-<Space>", sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts) 
-        , ("M-S-<Space>", sendMessage ToggleStruts)         
-        , ("M-S-n", sendMessage $ MT.Toggle NOBORDERS)      
-        , ("M-<KP_Multiply>", sendMessage (IncMasterN 1))   
-        , ("M-<KP_Divide>", sendMessage (IncMasterN (-1)))  
-        , ("M-S-<KP_Multiply>", increaseLimit)              
-        , ("M-S-<KP_Divide>", decreaseLimit)                
+        , ("M-<Space>", sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts)
+        , ("M-S-<Space>", sendMessage ToggleStruts)
+        , ("M-S-n", sendMessage $ MT.Toggle NOBORDERS)
+        , ("M-<KP_Multiply>", sendMessage (IncMasterN 1))
+        , ("M-<KP_Divide>", sendMessage (IncMasterN (-1)))
+        , ("M-S-<KP_Multiply>", increaseLimit)
+        , ("M-S-<KP_Divide>", decreaseLimit)
 
         , ("M-h", sendMessage Shrink)                       -- Shrink horiz window width
         , ("M-l", sendMessage Expand)                       -- Expand horiz window width
@@ -166,8 +166,8 @@ myKeys =
         , ("C-M1-M-h", decScreenSpacing 4)                  -- Decrease screen spacing
         , ("C-M1-M-l", incScreenSpacing 4)                  -- Increase screen spacing
 
-        , ("M-S-<KP_Add>", shiftTo Next nonNSP >> moveTo Next nonNSP)       
-        , ("M-S-<KP_Subtract>", shiftTo Prev nonNSP >> moveTo Prev nonNSP)  
+        , ("M-S-<KP_Add>", shiftTo Next nonNSP >> moveTo Next nonNSP)
+        , ("M-S-<KP_Subtract>", shiftTo Prev nonNSP >> moveTo Prev nonNSP)
         ]
         ++ [("M-s " ++ k, S.promptSearch dtXPConfig' f) | (k,f) <- searchList ]
         ++ [("M-S-s " ++ k, S.selectSearch f) | (k,f) <- searchList ]
@@ -178,7 +178,7 @@ myKeys =
                 nonEmptyNonNSP  = WSIs (return (\ws -> isJust (W.stack ws) && W.tag ws /= "nsp"))
 
 myXPConfig :: XPConfig
-myXPConfig = dtXPConfig 
+myXPConfig = dtXPConfig
           { promptKeymap = dtXPKeymap }
 
 dtXPKeymap :: M.Map (KeyMask,KeySym) (XP ())

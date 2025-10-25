@@ -10,3 +10,4 @@ extra-deps
 /log
 /dist-newstyle
 /Logs
+/xmonad-dbus

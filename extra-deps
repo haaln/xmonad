@@ -1,0 +1,1 @@
+cabal install --package-env=$HOME/.config/xmonad/ --lib containers-0.6.7 X11 xmonad-dbus dbus utf8-string

@@ -1,5 +1,12 @@
 .git/
-screenshot/
 .xmonad/
 log
 xmonad-x86-64-linux
+xmonad/
+xmonad-contrib/
+.ghc.env*
+extra-deps
+/xmonad-x86*
+/log
+/dist-newstyle
+/Logs

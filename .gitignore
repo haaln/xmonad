@@ -8,6 +8,6 @@ xmonad-contrib/
 extra-deps
 /xmonad-x86*
 /log
-/dist-newstyle
+dist-newstyle/*
 /Logs
 /xmonad-dbus

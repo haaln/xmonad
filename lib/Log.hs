@@ -13,7 +13,7 @@ import qualified DBus.Client as D
 import qualified Codec.Binary.UTF8.String as UTF8
 
 myLogHook :: X ()
-myLogHook = 
+myLogHook =
      workspaceHistoryHook
  -- <+> switchRes
  <+> fadeInactiveLogHook fadeAmount

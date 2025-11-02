@@ -3,7 +3,7 @@ module Hooks.Scratchpads
   , namedScratchpadAction
   , namedScratchpadManageHook
   ) where
-    
+
 import XMonad
 import XMonad.Util.NamedScratchpad
 import Data.List (isInfixOf)

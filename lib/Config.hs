@@ -14,7 +14,7 @@ myTabFont :: String
 myTabFont = "xft:JetBrainsMono NF :size=12:antialias=true:hinting=true"
 
 myTerminal :: String
-myTerminal = "alacritty" 
+myTerminal = "alacritty"
 myTerminalClass = "Alacritty"
 
 myBrowser :: String
@@ -77,12 +77,12 @@ myTabTheme = def { fontName            = myTabFont
                  }
 
 myXmobarPP =  def
-          { ppCurrent = xmobarColor color03 "" . wrap "[" "]" 
+          { ppCurrent = xmobarColor color03 "" . wrap "[" "]"
           , ppVisible = xmobarColor color03 ""
           , ppHidden = xmobarColor color07 "" . wrap "" ""
           , ppHiddenNoWindows = xmobarColor color13 ""
-          , ppTitle = xmobarColor colorFore "" . shorten 30
+          , ppTitle = xmobarColor colorFore "" . shorten 45
           , ppSep = "<fc=#666666> <fn=2>|</fn> </fc>"
-          , ppUrgent = xmobarColor color10 "" . wrap "!" "!"  
+          , ppUrgent = xmobarColor color10 "" . wrap "!" "!"
           , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]
           }

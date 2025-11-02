@@ -61,8 +61,6 @@ promptList' :: [(String, XPConfig -> String -> X (), String)]
 promptList' = [ ("c", calcPrompt, "qalc")
               ]
 
-
-
 myKeys :: [(String, X ())]
 myKeys =
         -- temp
@@ -73,13 +71,14 @@ myKeys =
         , ("M-C-r", spawn "xmonad --recompile")
         , ("M-S-r", spawn "xmonad --restart")
         , ("M-S-q q", io exitSuccess)
-        , ("M-S-q r", spawn "reboot")
-        , ("M-S-q s", spawn "poweroff")
 
-        , ("M-<Return>", spawn myTerminal)
+        -- Requires sudo on non-systemd
+        -- , ("M-S-q r", spawn "reboot")
+        -- , ("M-S-q s", spawn "poweroff")
+
+        , ("M1-<Return>", spawn myTerminal)
 
         , ("M-b", spawn "ungoogled-chromium")
-        , ("M-M1-b", spawn "brave-browser")
         , ("S-M1-f", spawn "thunar")
 
         , ("M-d", shellPrompt myXPConfig)
@@ -87,7 +86,6 @@ myKeys =
         , ("M1-<Space>", namedScratchpadAction myScratchPads "terminal")
         , ("M-s c", namedScratchpadAction myScratchPads "calculator")
         , ("M-s o", namedScratchpadAction myScratchPads "OBS")
-        , ("M-s n", namedScratchpadAction myScratchPads "ncmpcpp")
         , ("M-s b", namedScratchpadAction myScratchPads "newsboat")
         , ("M-s x", namedScratchpadAction myScratchPads "keepassxc")
         , ("M-s t", namedScratchpadAction myScratchPads "thunderbird")
@@ -135,12 +133,15 @@ myKeys =
         , ("<XF86AudioRaiseVolume>", spawn "mpc volume +10")
         , ("<XF86AudioLowerVolume>", spawn "mpc volume -10")
 
-
         , ("M-m", windows W.focusMaster)
-        , ("M-j", windows W.focusDown)
-        , ("M-k", windows W.focusUp)
-        , ("M-S-j", windows W.swapDown)
+
+        -- , ("M-k", windows W.focusUp)
+        -- , ("M-j", windows W.focusDown)
+        , ("C-k", windows W.focusUp)
+        , ("C-j", windows W.focusDown)
+
         , ("M-S-k", windows W.swapUp)
+        , ("M-S-j", windows W.swapDown)
         , ("M-<Backspace>", promote)
       --, ("M1-S-<Tab>", rotSlavesDown)
       --, ("M-S-m", windows W.swapMaster)

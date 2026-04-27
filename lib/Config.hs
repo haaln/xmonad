@@ -15,7 +15,7 @@ myTabFont = "xft:JetBrainsMono NF :size=12:antialias=true:hinting=true"
 
 myTerminal :: String
 myTerminal = "alacritty"
-myTerminalClass = "Alacritty"
+myTerminalClass = "alacritty"
 
 myBrowser :: String
 myBrowser = "chromium"

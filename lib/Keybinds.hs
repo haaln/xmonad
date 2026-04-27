@@ -64,12 +64,10 @@ promptList' = [ ("c", calcPrompt, "qalc")
 myKeys :: [(String, X ())]
 myKeys =
         -- temp
-        [ ("M-C-[", spawn "nitrogen --random --set-zoom --head=0 &")
-        , ("M-C-]", spawn "nitrogen --random --set-zoom --head=1 &")
-        , ("M-C-m", swallowToggle )
+        [ ("M-C-m", swallowToggle )
 
-        , ("M-C-r", spawn "xmonad --recompile")
-        , ("M-S-r", spawn "xmonad --restart")
+        -- , ("M-C-r", spawn "xmonad --recompile")
+        -- , ("M-S-r", spawn "xmonad --restart")
         , ("M-S-q q", io exitSuccess)
 
         -- Requires sudo on non-systemd
@@ -78,8 +76,8 @@ myKeys =
 
         , ("M1-<Return>", spawn myTerminal)
 
-        , ("M-b", spawn "ungoogled-chromium")
-        , ("S-M1-f", spawn "thunar")
+        -- , ("M-b", spawn "ungoogled-chromium")
+        -- , ("S-M1-f", spawn "thunar")
 
         , ("M-d", shellPrompt myXPConfig)
 
@@ -116,8 +114,8 @@ myKeys =
         , ("M-<Delete>", withFocused $ windows . W.sink)
         , ("M-<XF86WheelButton>", withFocused $ windows . W.sink)
         , ("M-S-<Delete>", sinkAll)
-        , ("M-C-l", withFocused (keysMoveWindow (-200,0)))
-        , ("M-C-h", withFocused (keysMoveWindow (200,0)))
+        , ("M-C-l", withFocused (keysMoveWindow (200,0)))
+        , ("M-C-h", withFocused (keysMoveWindow (-200,0)))
         , ("M-C-j", withFocused (keysMoveWindow (0,200)))
         , ("M-C-k", withFocused (keysMoveWindow (0,-200)))
 

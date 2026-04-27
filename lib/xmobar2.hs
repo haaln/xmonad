@@ -4,7 +4,7 @@ Config
  , additionalFonts = ["VictorMono Nerd Font Bold 15"]
  , bgColor         = "#282c34"
  , fgColor         = "#51afef" 
- , position        = Static { xpos = 1920 , ypos = 0, width = 1920, height = 17 }
+ , position        = Static { xpos = 3840 , ypos = 0, width = 1920, height = 17 }
  , lowerOnStart    = True
  , hideOnStart     = False
  , allDesktops     = True

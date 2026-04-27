@@ -45,8 +45,8 @@ myLayoutHook = avoidStruts
 
              where
                myDefaultLayout =
-                                        tall
-                                    ||| noBorders tabs
+                                          noBorders tabs
+                                    |||   tall
                                  -- ||| spirals
                                  -- ||| threeCol
                                  -- ||| threeRow
